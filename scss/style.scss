@@ -1,0 +1,162 @@
+@import "partials/mixins";
+@import "partials/maps";
+@import "partials/variables";
+@import "partials/helpers";
+
+
+body{
+    a{
+        text-decoration: none;
+        // font-family: 'Courier New', Courier, monospace;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+
+@include MQ('md','and-smaller'){
+    #menu{
+        display: none;
+    }
+    .hamburger-menu{
+        display: flex;
+    }
+    #hero{
+        width: 100vw;
+    }
+    .main-page{
+        margin-left: 0;
+    }
+}
+@include MQ('md','and-wider'){
+    #menu{
+        display: flex;
+    }
+    .hamburger-menu{
+        display: none;
+    }
+    #hero{
+        width: calc(100vw - 210px);
+        margin-left: $menu_width;
+    }
+    .main-page{
+        width: calc(100vw - 210px);
+        margin-left: $menu_width;
+    }
+}
+
+.main-page-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.main-page{
+    @include constrain_at_breakpoints;
+}
+
+.hamburger-menu{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    height: 50px;
+    width: 50px;
+    color: white;
+    font-size: 50px;
+    z-index: 1;
+}
+
+#menu{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    width: $menu_width;
+    background-color: bisque;
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $menu_width;
+        height: $menu_width;
+        border-bottom: green solid 3px;
+        // text-decoration: none;
+        font-size: 100px;
+        color: green;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: $menu_width;
+        height: fit-content;
+        padding: 60px 0 10px;
+        a{
+            height: 65px;
+            // text-decoration: none;
+            font-size: 1.3rem;
+        }
+    }
+    .github-icon{
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+    }
+}
+
+#hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/hero_img_1.jpg');
+    // background-image: linear-gradient(to left, rgba(200, 200, 200, .1), rgba(0, 0, 0, 1)),
+    // url("../img/sliding/home-3wAI.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    .hero-text{
+        display: flex;
+        font-family:monospace;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .scroll-down{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        i{
+            font-size:30px;
+        }
+    }
+}
+
+// #project{
+//     display: flex;
+//     // flex-direction: column;
+//     justify-content: center;
+//     align-items: top;
+// }
+
+// #contact{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// #footer{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     align-items: center;
+//     width: 100vw;
+//     border: blue solid 3px;
+// }
