@@ -5,14 +5,15 @@
 
 
 body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    // font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
     a{
         text-decoration: none;
-        // font-family: 'Courier New', Courier, monospace;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 }
 
-@include MQ('md','and-smaller'){
+@include MQ('md','and-smaller'){    // Smaller screen sizes: Hide the side menu show the hamburger menu icon.
     #menu{
         display: none;
     }
@@ -23,10 +24,12 @@ body{
         width: 100vw;
     }
     .main-page{
-        margin-left: 0;
+        width: 100vw;
+        padding: 50px;
+        // Media query here test mobile to place left padding to extend pass the scrolling fixed hamburger menu icon
     }
 }
-@include MQ('md','and-wider'){
+@include MQ('md','and-wider'){  //  Larger screen sizes: Hide the hamburger menu icon and show the side menu also set the margin-left by the menu width to prevent the page from slipping under the menu.
     #menu{
         display: flex;
     }
@@ -40,19 +43,19 @@ body{
     .main-page{
         width: calc(100vw - 210px);
         margin-left: $menu_width;
+        padding: 50px;
     }
 }
 
-.main-page-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-}
-
 .main-page{
-    @include constrain_at_breakpoints;
-}
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+    // padding: 40px;
+    background-color: black;
+    border: solid 6px purple;
+}  
 
 .hamburger-menu{
     justify-content: center;
@@ -63,8 +66,11 @@ body{
     height: 50px;
     width: 50px;
     color: white;
-    font-size: 50px;
+    font-size: 35px;
     z-index: 1;
+    i{
+        filter: drop-shadow(0px 0px 25px rgba(0,0,0,1))!important;
+    }
 }
 
 #menu{
@@ -75,17 +81,18 @@ body{
     overflow: auto;
     height: 100%;
     width: $menu_width;
-    background-color: bisque;
+    background-color: black;
+    border-right: solid white 2px;
     .logo{
         display: flex;
         justify-content: center;
         align-items: center;
         width: $menu_width;
         height: $menu_width;
-        border-bottom: green solid 3px;
+        border-bottom: white solid 2px;
         // text-decoration: none;
         font-size: 100px;
-        color: green;
+        color: whitesmoke;
     }
     .menu{
         display: flex;
@@ -119,6 +126,7 @@ body{
     background-size: cover;
     height: 100vh;
     color: white;
+    border-bottom: solid white 2px;
     .hero-text{
         display: flex;
         font-family:monospace;
@@ -139,18 +147,29 @@ body{
     }
 }
 
-// #project{
-//     display: flex;
-//     // flex-direction: column;
-//     justify-content: center;
-//     align-items: top;
-// }
+#project{
+    .project-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: flex-start;
+        border: solid 3px green;
+        img{
+            width: auto;
+            // height: 100%;
+            border: solid 3px red;
+        }
+    }
+}
 
-// #contact{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+#contact{
+    display: flex;
+    justify-self: flex-start;
+    align-self: center;
+    max-width:1300px;
+    margin: 50px 0;
+    border: 3px solid yellow;
+}
 
 // #footer{
 //     display: flex;

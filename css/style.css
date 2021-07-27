@@ -1,6 +1,9 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+}
 body a {
   text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -17,7 +20,8 @@ body a {
   }
 
   .main-page {
-    margin-left: 0;
+    width: 100vw;
+    padding: 50px;
   }
 }
 @media (min-width: 768px) {
@@ -37,38 +41,14 @@ body a {
   .main-page {
     width: calc(100vw - 210px);
     margin-left: 210px;
+    padding: 50px;
   }
 }
-.main-page-wrapper {
+.main-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-}
-
-@media (max-width: 576px) {
-  .main-page {
-    width: 100%;
-    border: solid 3px red;
-  }
-}
-@media (min-width: 768px) {
-  .main-page {
-    width: 750px;
-    border: solid 3px green;
-  }
-}
-@media (min-width: 992px) {
-  .main-page {
-    width: 970px;
-    border: solid 3px blue;
-  }
-}
-@media (min-width: 1200px) {
-  .main-page {
-    width: 1200px;
-    border: solid 3px yellow;
-  }
+  flex-direction: column;
+  background-color: black;
+  border: solid 6px purple;
 }
 
 .hamburger-menu {
@@ -80,8 +60,11 @@ body a {
   height: 50px;
   width: 50px;
   color: white;
-  font-size: 50px;
+  font-size: 35px;
   z-index: 1;
+}
+.hamburger-menu i {
+  filter: drop-shadow(0px 0px 25px black) !important;
 }
 
 #menu {
@@ -92,7 +75,8 @@ body a {
   overflow: auto;
   height: 100%;
   width: 210px;
-  background-color: bisque;
+  background-color: black;
+  border-right: solid white 2px;
 }
 #menu .logo {
   display: flex;
@@ -100,9 +84,9 @@ body a {
   align-items: center;
   width: 210px;
   height: 210px;
-  border-bottom: green solid 3px;
+  border-bottom: white solid 2px;
   font-size: 100px;
-  color: green;
+  color: whitesmoke;
 }
 #menu .menu {
   display: flex;
@@ -132,6 +116,7 @@ body a {
   background-size: cover;
   height: 100vh;
   color: white;
+  border-bottom: solid white 2px;
 }
 #hero .hero-text {
   display: flex;
@@ -150,6 +135,26 @@ body a {
 }
 #hero .scroll-down i {
   font-size: 30px;
+}
+
+#project .project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 3px green;
+}
+#project .project-card img {
+  width: auto;
+  border: solid 3px red;
+}
+
+#contact {
+  display: flex;
+  justify-self: flex-start;
+  align-self: center;
+  max-width: 1300px;
+  margin: 50px 0;
+  border: 3px solid yellow;
 }
 
 /*# sourceMappingURL=style.css.map */
