@@ -43,43 +43,55 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project One">
-                        <h2>Project One</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Netmatters Site Recreation</h2>
+                            <p>View Project</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project Two">
-                        <h2>Project Two</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Project Two</h2>
+                            <p>View Project</h3>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project Three">
-                        <h2>Project Three</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Project Three</h2>
+                            <p>View Project</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project Four">
-                        <h2>Project Four</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Project Four</h2>
+                            <p>View Project</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project Five">
-                        <h2>Project Five</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Project Five</h2>
+                            <p>View Project</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
                     <div class="project-card">
                         <img src="img/project_ph.jpg" alt="Project Six">
-                        <h2>Project Six</h2>
-                        <h3>View Project</h3>
+                        <div class="title">
+                            <h2>Project Six</h2>
+                            <p>View Project</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,14 +100,36 @@
     <div id="contact">
         <div class="contact-card">
             <h2>Get in Touch</h2>
-            <p>Please feel free to contact me regarding my web development skillset and your business needs</p>
+            <p>Please feel free to contact me using the form regarding my web development skills and your business needs.</p>
+            <div class="contact-form container d-flex d-md-none">
+                <form method="POST" action="#">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <input type="text" placeholder="First Name*" name="firstName">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <input type="text" placeholder="Last Name*" name="lastName">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" placeholder="Your Email Address*" name="emailAddress">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" placeholder="Subject of Your Enquiry" name="subject">
+                        </div>
+                        <div class="col-12">
+                            <textarea placeholder="Message" name="message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <a class="tel" href="tel:01603704020">01603 70 40 20</a>
             <a class="email" href="mailto:info@netmatters.com">info@netmatters.com</a>
-            <p>Please also feel free to contact Netmattters for more information about how partnering with the Scion Scheme can benefit your business.</p>
-            <p>Please also feel free to contact Netmattters for more information about how partnering with the Scion Scheme can benefit your business.</p>
-            <p>Please also feel free to contact Netmattters for more information about how partnering with the Scion Scheme can benefit your business.</p>
+            <p>Please also feel free to contact Netmatters about their scion scheme and how partnering can benefit your business.</p>
         </div>
-        <div class="container">
+        <div class="contact-form container d-none d-md-flex">
             <form method="POST" action="#">
                 <div class="row">
                     <div class="col-12 col-xl-6">
@@ -121,11 +155,12 @@
         </div>
     </div>
     <div id="footer">
-        <div class="scroll up">
+        <a href="#project" class="scroll-up">
+            <i class="fas fa-chevron-up"></i>
             Scroll Up
-        </div>
+        </a>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
