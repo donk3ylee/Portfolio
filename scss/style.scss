@@ -53,6 +53,7 @@ body{
 .main-page{
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: $matrix-black;
 }  
 
@@ -107,6 +108,10 @@ body{
         }
     }
     .github-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 50px;
         height: 50px;
         width: 50px;
@@ -142,6 +147,7 @@ body{
         position: absolute;
         bottom: 20px;
         color: whitesmoke;
+        @include scroll-down-bounce-animation;
         i{
             font-size:30px;
         }
@@ -237,6 +243,7 @@ body{
     .email{
         display: block;
         padding-bottom: 20px;
+        width: fit-content;
     }
     button{
         @extend %button;
@@ -249,7 +256,9 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 1300px;
         color: white;
+        @include scroll-up-bounce-animation;
         i{
             font-size:30px;
         }
