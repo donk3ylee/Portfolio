@@ -107,14 +107,6 @@ body{
         }
     }
     .github-icon{
-        // display: flex;
-        // // flex-direction: column;
-        // justify-content: center;
-        // justify-self: center;
-        // justify-items: center;
-        // align-content: center;
-        // align-items: center;
-        // align-self: center;
         font-size: 50px;
         height: 50px;
         width: 50px;
@@ -123,46 +115,6 @@ body{
             transform: scale(1.2) rotate(360deg);
             color:white;
         }
-    }
-    .tooltip-container{
-        @include build-arrow($size: 10px, $orientation: down, $color:green);
-        position: relative;
-        display: flex;
-        // justify-content: center;
-        align-items: center;
-        height:fit-content;
-        width:fit-content;
-        transition: opacity 1s linear, visibility 1s linear;
-        .tooltipi{
-            opacity: 0;
-            visibility: hidden;
-            
-            position: absolute;
-            z-index: 1;
-            width: 120px;
-            top: 100%;
-            left: 50%;
-            margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-            margin-top: 10px;
-            
-            background-color: white;
-            color: black;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 6px;
-            
-            
-            font-size: 0.8rem;
-        }
-    }
-    .tooltip-container:hover{
-        opacity: 1;
-        visibility: visible;
-    }
-    .tooltip-container:hover .tooltipi{
-        opacity: 1;
-        visibility: visible;
-        
     }
 }
 
