@@ -1,5 +1,43 @@
 
 
+@mixin build-arrow($size:20px, $orientation: down, $color: #000000){
+    $orientation-list:(
+        'up',
+        'down',
+        'left',
+        'right',
+    );
+    @if index($orientation-list, $orientation) == null{
+        @error "Your passing the $orientation into the build-arrow @mixin PARAM 2 which isn't valid. You passed '#{$orientation}' the acceptable values are 'up' 'down' 'left' or 'right'.";
+    }
+
+    content: " ";
+    position: absolute;
+    border-style: solid;
+    border-width: $size;
+    @if $orientation == "down"{    
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: calc($size * -1);
+    border-color: $color transparent transparent transparent;
+    } @else if $orientation == "up"{
+    bottom: 100%;  /* At the top of the tooltip */
+    // left: 50%;
+    margin-left: calc($size * -1);
+    border-color: transparent transparent $color transparent;
+    } @else if $orientation == "left"{
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: calc($size * -1);
+    border-color: transparent $color transparent transparent;
+    } @else if $orientation == "right"{
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: calc($size * -1);
+    border-color: transparent transparent transparent $color;
+    }
+}
+
 @mixin MQ($bp, $func){
     @if not map-has-key($MQ_breakpoints_map,$bp){
         @error "Your passing a breakpoint to @mixin MQ PARAM 1 which isn't valid. You passed '#{$bp}' the acceptable values can be found in $MQ_breakpoints_map.";
@@ -11,3 +49,33 @@
         }
     }   
 }
+
+
+// Prefixers and IE targeting
+
+@mixin vprefix($property:null, $value:null){
+    // -webkit-: a prefix to make sure that properties work on Chrome, Safari, nearly all iOS browsers, and newer versions of Opera.
+    // -moz-: a prefix for Firefox.
+    // -o-: a prefix for older versions of Opera.
+    // -ms-: a prefix for Internet Explorer and Microsoft Edge.
+    
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+@mixin targetIEonly{
+    @media screen\0 {  // targets IE 8 9 & 10
+        // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
+    @content;
+    }
+    
+    _:-ms-fullscreen, :root {  // Targets IE 11+
+        // Internet Explorer doesn’t support “woff2”. so adding “eot” as a fallback.
+    @content;
+    }
+}
+
+// Prefixers END
