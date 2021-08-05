@@ -10,6 +10,12 @@
     &:hover{
         animation: animate-down 1s;
     }
+    &:focus{
+        animation: animate-down 1s;
+    }
+    &:active{
+        animation: animate-down 1s;
+    }
 }
 
 @mixin scroll-up-bounce-animation{
@@ -22,6 +28,71 @@
     } 
     &:hover{
         animation: animate-up 1s;
+    }
+    &:focus{
+        animation: animate-up 1s;
+    }
+    &:active{
+        animation: animate-up 1s;
+    }
+}
+
+@mixin buildTooltip($width: 120px, $margin: 10px, $bg-color: white, $color: black, $border-radius: 6px){
+    position: absolute;
+    z-index: 1;
+
+    width: $width;
+    top: 100%;
+    left: 50%;
+    margin-left: calc(($width/2)*-1); /* Use half of the width (120/2 = 60), to center the tooltip */
+    margin-top: $margin;
+    
+    background-color: $bg-color;
+    color: $color;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: $border-radius;
+    
+    
+    font-size: 0.8rem;
+}
+
+
+@mixin build-arrow($size:20px, $orientation: down, $color: #000000){
+    $orientation-list:(
+        'up',
+        'down',
+        'left',
+        'right',
+    );
+    @if index($orientation-list, $orientation) == null{
+        @error "Your passing the $orientation into the build-arrow @mixin PARAM 2 which isn't valid. You passed '#{$orientation}' the acceptable values are 'up' 'down' 'left' or 'right'.";
+    }
+
+    // content: " ";
+    position: absolute;
+    border-style: solid;
+    border-width: $size;
+    @if $orientation == "down"{    
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: calc($size * -1);
+    border-color: $color transparent transparent transparent;
+    } @else if $orientation == "up"{
+    bottom: 100%;  /* At the top of the tooltip */
+    // left: 50%;
+    margin-left: calc($size * -1);
+    border-color: transparent transparent $color transparent;
+    } @else if $orientation == "left"{
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: calc($size * -1);
+    border-color: transparent $color transparent transparent;
+    } @else if $orientation == "right"{
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: calc($size * -1);
+    border-color: transparent transparent transparent $color;
     }
 }
 

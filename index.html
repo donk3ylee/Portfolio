@@ -12,21 +12,26 @@
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="menu">
+<div id="menu" class="section">
     <a class="logo" href="index.html">LW</a>
     <nav>
         <div class="menu">
-            <a href="">About Me</a>
-            <a href="">My Portfolio</a>
-            <a href="">Coding Examples</a>
-            <a href="">SCS Scheme</a>
-            <a href="">Contact Me</a>
+            <a href="about_me.html">About Me</a>
+            <a href="#project">My Portfolio</a>
+            <a href="coding_examples.html">Coding Examples</a>
+            <a href="scs_scheme.html">SCS Scheme</a>
+            <a href="#contact">Contact Me</a>
         </div>
-        <a class="center" href=""><i class="github-icon fab fa-github"></i></a>
+        <a href="https://github.com/donk3ylee" class="center" target="_blank">
+            <div class="tooltip-container">
+                <i class="github-icon fab fa-github"></i>
+                <span class="tooltipi">See my coding projects on GitHub</span>
+            </div>
+        </a>
     </nav>
 </div>
 <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
-<div id="hero">
+<div id="hero" class="section">
     <div class="hero-text">
         <h1>My Name is Lee Whiting</h1>
         <h2>I'm a Web Developer</h2>
@@ -37,67 +42,80 @@
     </a>
 </div>
 <div class="main-page">
-    <div id="project">
+    <div id="project" class="section">
         <div class="container">
             <div class="row g-5">
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project One">
-                        <div class="title">
-                            <h2>Netmatters Site Recreation</h2>
-                            <p>View Project</p>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/projects/netmatters.png" alt="Netmatters Site Recreation">
+                            <div class="title">
+                                <h2>Netmatters.co.uk Recreation</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                                
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project Two">
-                        <div class="title">
-                            <h2>Project Two</h2>
-                            <p>View Project</h3>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/projects/project2.png" alt="Project Two">
+                            <div class="title">
+                                <h2>Project Two</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project Three">
-                        <div class="title">
-                            <h2>Project Three</h2>
-                            <p>View Project</p>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/project_ph.jpg" alt="Project Three">
+                            <div class="title">
+                                <h2>Project Three</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project Four">
-                        <div class="title">
-                            <h2>Project Four</h2>
-                            <p>View Project</p>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/project_ph.jpg" alt="Project Four">
+                            <div class="title">
+                                <h2>Project Four</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project Five">
-                        <div class="title">
-                            <h2>Project Five</h2>
-                            <p>View Project</p>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/project_ph.jpg" alt="Project Five">
+                            <div class="title">
+                                <h2>Project Five</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-4">
-                    <div class="project-card">
-                        <img src="img/project_ph.jpg" alt="Project Six">
-                        <div class="title">
-                            <h2>Project Six</h2>
-                            <p>View Project</p>
+                    <a href="#">
+                        <div class="project-card">
+                            <img src="img/project_ph.jpg" alt="Project Six">
+                            <div class="title">
+                                <h2>Project Six</h2>
+                                <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="contact">
+    <div id="contact" class="section">
         <div class="contact-card">
             <h2>Get in Touch</h2>
             <p>Please feel free to contact me using the form regarding my web development skills and your business needs.</p>
