@@ -33,8 +33,54 @@ body a {
   text-decoration: none;
   color: #C63581;
 }
-body a:hover {
+body a:hover, body a:focus, body a:active {
   color: #96004F;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  header {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  header h1 {
+    text-align: center;
+    margin: 0 7% 0 7%;
+    width: 100%;
+  }
+}
+header .header-image {
+  margin: 0 0 60px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: solid 3px white;
+  object-fit: cover;
+}
+header h1 {
+  display: block;
+}
+
+main {
+  margin: 50px 0 auto 35px;
+  min-height: calc(100vh - 65px);
+}
+main h2 {
+  padding: 20px 0 15px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 @media (max-width: 768px) {
@@ -148,13 +194,7 @@ body a:hover {
   border-bottom: 4px solid #7A0040;
   transition: 0.4s ease-in-out;
 }
-#menu .menu a:hover:after {
-  width: 100%;
-}
-#menu .menu a:focus::after {
-  width: 100%;
-}
-#menu .menu a:active:after {
+#menu .menu a:hover::after, #menu .menu a:focus::after, #menu .menu a:active::after {
   width: 100%;
 }
 #menu .github-icon {
@@ -367,7 +407,7 @@ body a:hover {
   font-size: 1.1rem;
   transition: transform 0.2s ease-in, border 0.2s ease-in;
 }
-#contact button:hover {
+#contact button:hover, #contact button:focus, #contact button:active {
   transform: scale(1.2);
   color: white;
   background-color: #96004F;
@@ -403,9 +443,6 @@ body a:hover {
   margin-bottom: 20px;
 }
 
-.scroll-up {
-  padding-top: 0;
-}
 @keyframes animate-up {
   0% {
     transform: translateY(0) scale(1);
@@ -433,11 +470,33 @@ body a:hover {
   animation: animate-up 1s;
 }
 
-#about-me .my-image {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  border: solid 3px white;
+#about-me {
+  max-width: 1000px;
+  width: 100%;
+}
+
+#scs-scheme {
+  max-width: 1000px;
+  width: 100%;
+}
+
+#coding-example-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/coding_example.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  border-bottom: solid #00530A 2px;
+}
+#coding-example-hero .hero-text {
+  display: flex;
+  font-family: monospace;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

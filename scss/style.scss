@@ -10,11 +10,60 @@ body{
     a{
         text-decoration: none;
         color: $matrix-purple-light;
-        &:hover{
+        &:hover,
+        &:focus,
+        &:active{
             color: $matrix-purple;
         }
     }
 }
+
+// common to all internal pages except index
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include MQ('lg','and-wider'){
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        h1{
+            text-align: center;
+            margin: 0 7% 0 7%;
+            width: 100%;
+        }
+    }
+    .header-image{
+        margin: 0 0 60px;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        border: solid 3px white;
+        object-fit: cover; // Works on all but IE. Use any image ratio and will work for rounded image.
+    }
+    h1{
+        display: block;
+        // margin-left: 10%;
+    }
+
+}
+main{
+    margin: 50px 0 auto 35px;
+    min-height: calc(100vh - 65px);
+    h2{
+        padding: 20px 0 15px;
+    }
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+    // sticky footer
+}
+// end common
 
 @include MQ('md','and-smaller'){    // Smaller screen sizes: Hide the side menu show the hamburger menu icon.
     #menu{
@@ -118,13 +167,9 @@ body{
                 border-bottom: 4px solid $matrix-purple-med-d;
                 transition: 0.4s ease-in-out;
             }
-            &:hover:after{
-                width: 100%;
-            }
-            &:focus::after{
-                width: 100%;
-            }
-            &:active:after{
+            &:hover::after,
+            &:focus::after,
+            &:active::after{
                 width: 100%;
             }
         }
@@ -313,7 +358,9 @@ body{
     border-radius: 30px;
     font-size: 1.1rem;
     transition: transform .2s ease-in, border .2s ease-in;
-    &:hover{
+    &:hover,
+    &:focus,
+    &:active{
         transform: scale(1.2);
         color: white;
         background-color: $matrix-purple;
@@ -356,15 +403,36 @@ body{
 
 .scroll-up{
     @extend %scroll;
-    padding-top: 0;
+    // padding-top: 0;
     @include scroll-up-bounce-animation;
 }
 
 #about-me{
-    .my-image{
-        height: 300px;
-        width: 300px;
-        border-radius: 50%;
-        border: solid 3px white;
+    max-width:1000px;
+    width: 100%;
+}
+
+#scs-scheme{
+    max-width:1000px;
+    width: 100%;
+}
+
+
+#coding-example-hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/coding_example.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    border-bottom: solid $matrix-green-dark 2px;
+    .hero-text{
+        display: flex;
+        font-family:monospace;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
