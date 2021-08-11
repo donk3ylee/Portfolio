@@ -1,39 +1,31 @@
 
 @mixin scroll-down-bounce-animation{
-    @keyframes animate-down {
+    @keyframes animate-bounce-down {
         0% {transform: translateY(0) scale(1);}
         40% {transform: translateY(-30px) scale(1.2);}
         50% {transform: translateY(0) scale(1);}
         60% {transform: translateY(-15px) scale(1.1);}
         100% {transform: translateY(0) scale(1);}
     } 
-    &:hover{
-        animation: animate-down 1s;
-    }
-    &:focus{
-        animation: animate-down 1s;
-    }
+    &:hover,
+    &:focus,
     &:active{
-        animation: animate-down 1s;
+        animation: animate-bounce-down 1s;
     }
 }
 
 @mixin scroll-up-bounce-animation{
-    @keyframes animate-up {
+    @keyframes animate-bounce-up {
         0% {transform: translateY(0) scale(1);}
         40% {transform: translateY(30px) scale(1.1);}
         50% {transform: translateY(0) scale(1);}
         60% {transform: translateY(15px) scale(1.2);}
         100% {transform: translateY(0) scale(1);}
     } 
-    &:hover{
-        animation: animate-up 1s;
-    }
-    &:focus{
-        animation: animate-up 1s;
-    }
+    &:hover,
+    &:focus,
     &:active{
-        animation: animate-up 1s;
+        animation: animate-bounce-up 1s;
     }
 }
 

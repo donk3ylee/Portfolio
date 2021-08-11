@@ -24,30 +24,30 @@ header{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    h1{
+        text-align: center;
+        width: 100%;
+        margin: 0 50px;
+    }
     @include MQ('lg','and-wider'){
         display: inline-flex;
         flex-direction: row;
         align-items: center;
         width: 100%;
-        h1{
-            text-align: center;
-            margin: 0 7% 0 7%;
-            width: 100%;
-        }
     }
     .header-image{
         margin: 0 0 60px;
         height: 300px;
+        min-height: 300px; //
         width: 300px;
+        min-width: 300px;  //
         border-radius: 50%;
         border: solid 3px white;
         object-fit: cover; // Works on all but IE. Use any image ratio and will work for rounded image.
     }
     h1{
         display: block;
-        // margin-left: 10%;
     }
-
 }
 main{
     margin: 50px 0 auto 35px;
@@ -61,7 +61,13 @@ footer{
     justify-content: center;
     align-items: center;
     height:100px;
-    // sticky footer
+    .scroll-up{
+        @extend %scroll;
+        @include MQ('md','and-wider'){
+            margin-left: -50px; // take into consideration the padding in the main-page
+        }
+        @include scroll-up-bounce-animation;
+    }
 }
 // end common
 
@@ -77,8 +83,7 @@ footer{
     }
     .main-page{
         width: 100vw;
-        padding: 50px;
-        // Media query here test for smallest mobile to place left padding to extend pass the scrolling fixed hamburger menu icon
+        // Media query here test for smallest mobile to shift contents right in order to extend pass the scrolling fixed hamburger menu icon
         @media only screen and(max-width:290px){
             padding: 50px 10px 50px 60px;
         }
@@ -92,13 +97,11 @@ footer{
         display: none;
     }
     #hero{
-        width: calc(100vw - 210px);
         margin-left: $menu_width;
     }
     .main-page{
         width: calc(100vw - 210px);
         margin-left: $menu_width;
-        padding: 50px;
     }
 }
 
@@ -107,6 +110,7 @@ footer{
     flex-direction: column;
     align-items: center;
     background-color: $matrix-black;
+    padding: 50px;
 }  
 
 .hamburger-menu{
@@ -217,22 +221,22 @@ footer{
         0% {opacity: 0; visibility: hidden;}
         100% {opacity: 1; visibility: visible;}
     }
-    // @keyframes fadeOut{
-    //     0% {opacity: 1; visibility: visible;}
-    //     100% {opacity: 0; visibility: hidden;}
-    // }
     @-webkit-keyframes fadeIn{
         0% {-webkit-opacity: 0; -webkit-visibility: hidden;}
         100% {-webkit-opacity: 1; -webkit-visibility: visible;}
     } 
-    // @-webkit-keyframes fadeOut{
-    //     0% {-webkit-opacity: 1; -webkit-visibility: visible;}
-    //     100% {-webkit-opacity: 0; -webkit-visibility: hidden;}
-    // } 
     .tooltip-container:hover .tooltipi{
         animation: fadeIn 1s ease both;
         -webkit-animation: fadeIn 1s both alternate;
     }
+    // @keyframes fadeOut{
+    //     0% {opacity: 1; visibility: visible;}
+    //     100% {opacity: 0; visibility: hidden;}
+    // }
+    // @-webkit-keyframes fadeOut{
+    //     0% {-webkit-opacity: 1; -webkit-visibility: visible;}
+    //     100% {-webkit-opacity: 0; -webkit-visibility: hidden;}
+    // } 
     // .tooltip-container:not(:hover) .tooltipi{
     //     animation: fadeOut 1s ease;
     //     // -webkit-animation: fadeOut 1s both alternate;
@@ -251,7 +255,7 @@ footer{
     border-bottom: solid $matrix-green-dark 2px;
     .hero-text{
         display: flex;
-        font-family:monospace;
+        font-family: monospace;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -260,33 +264,46 @@ footer{
         @extend %scroll;
         position:absolute;
         bottom: 0;
+        @include MQ('md','and-smaller'){
+            left:calc(50% - 50px); // need to center but also take into account the main-page left padding or margin.
+        }   
+        left: 50%; // but no need to account for margins when the menu is shown?
         @include scroll-down-bounce-animation;
     }
 }
 
 
 #project{
-    margin: 80px 0 0;
+    width: 100%; //
     max-width:1300px;
     .project-card{
         display: flex;
         flex-direction: column;
-        // justify-content: flex-start;
-        align-items: center;
+        margin: 80px 0 0;
+        max-width: 360px;
+        margin-right: auto;
+        margin-left: auto;
+        @include targetIEonly{
+            width: auto;
+            height: auto;
+            margin: 20px; //
+        }
         img{
             border: solid 2px grey;
             border-radius: $project-card-border-radius;
             height: 230px;
+            min-height: 230px;
             width: 100%;
-            max-width: 360px;
             object-fit: cover;
             @include targetIEonly{
                 height: auto;
+                max-height: 230px;
                 width: 100%;
+                -ms-interpolation-mode: bicubic;
             }
             box-shadow: 0 0 20px grey;
             transform: scale(1);
-            transition: box-shadow 1s ease, transform 0.4s ease;
+            transition: box-shadow 1s ease, transform 0.4s ease, filter 0.4s ease;
         }
         &:hover img{
             filter: brightness(60%);
@@ -300,8 +317,13 @@ footer{
             padding-left: 20px;
             color: #bbb;
             z-index: 1;
+            word-wrap: normal;
+            @include targetIEonly{
+                width: 100%;
+                -ms-word-wrap: normal;
+            }
             h2{
-                font-size: 2rem;
+                font-size: auto;
                 margin-bottom:0px!important;
             }
             p{
@@ -331,14 +353,14 @@ footer{
 %input{
     width: 100%;
     margin: 5px 0;
+    padding:3px 10px;
     height: 2.4rem;
     line-height: 1.5rem;
     font-size: 1.1rem;
     color: white;
-    background-color: $matrix-purple-light;
+    background-color: $matrix-purple-med-l;
     border: solid 2px #999;
     border-radius: 15px;
-    padding:3px 5px;
     &:focus{
         color: white;
         background-color: $matrix-black;
@@ -353,7 +375,7 @@ footer{
     min-height: 60px;
     min-width: 130px;
     color: white;
-    background-color: $matrix-purple-light;
+    background-color: $matrix-purple-med-l;
     border: solid 3px #999;
     border-radius: 30px;
     font-size: 1.1rem;
@@ -363,25 +385,34 @@ footer{
     &:active{
         transform: scale(1.2);
         color: white;
-        background-color: $matrix-purple;
-        border: solid 5px white;
+        border: solid 3px white;
     }
 }
 #contact{
     display: flex;
-    justify-self: flex-start;
-    align-self: center;
+    width: 100%;
     max-width:1300px;
     margin: 80px 0 30px;
-    padding: 30px 0;
+    padding: 30px 30px;
     border: solid 3px $matrix-green-dark;
     border-radius: 30px;
-    .contact-card{
-        flex: 2 1 40%;
-        margin: 0 10px;
+    .contact-copy{
+        flex: 1 1 40%;
+        width:100%;
+        @include MQ('md','and-wider'){
+            margin: 0 30px 0 0;
+        }
+    }
+    .inline-form{
+        @include MQ('md','and-wider'){
+            display: none;
+        }
     }
     .contact-form{
-        flex: 3 3 60%;
+        flex: 3 1 60%;
+        @include MQ('md','and-smaller'){
+            display: none;
+        }
     }
     input{
         @extend %input;
@@ -389,6 +420,8 @@ footer{
     textarea{
         @extend %input;
         height: calc(1.5rem * 6);
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     .email{
         display: block;
@@ -399,12 +432,6 @@ footer{
         @extend %button;
         margin-bottom: 20px;
     }
-}
-
-.scroll-up{
-    @extend %scroll;
-    // padding-top: 0;
-    @include scroll-up-bounce-animation;
 }
 
 #about-me{

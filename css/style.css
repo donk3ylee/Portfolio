@@ -1,7 +1,6 @@
 .center {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .section:target {
@@ -9,7 +8,7 @@
   margin-top: -80px;
 }
 
-.scroll-up, #hero .scroll-down {
+#hero .scroll-down, footer .scroll-up {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +17,8 @@
   width: 120px;
   color: whitesmoke;
 }
-.scroll-up i, #hero .scroll-down i {
+#hero .scroll-down i, footer .scroll-up i {
   font-size: 30px;
-}
-.scroll-up:hover, #hero .scroll-down:hover {
-  color: whitesmoke;
 }
 
 body {
@@ -43,6 +39,11 @@ header {
   align-items: center;
   text-align: center;
 }
+header h1 {
+  text-align: center;
+  width: 100%;
+  margin: 0 50px;
+}
 @media (min-width: 992px) {
   header {
     display: inline-flex;
@@ -50,16 +51,13 @@ header {
     align-items: center;
     width: 100%;
   }
-  header h1 {
-    text-align: center;
-    margin: 0 7% 0 7%;
-    width: 100%;
-  }
 }
 header .header-image {
   margin: 0 0 60px;
   height: 300px;
+  min-height: 300px;
   width: 300px;
+  min-width: 300px;
   border-radius: 50%;
   border: solid 3px white;
   object-fit: cover;
@@ -82,6 +80,31 @@ footer {
   align-items: center;
   height: 100px;
 }
+@media (min-width: 768px) {
+  footer .scroll-up {
+    margin-left: -50px;
+  }
+}
+@keyframes animate-bounce-up {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(30px) scale(1.1);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    transform: translateY(15px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
+  animation: animate-bounce-up 1s;
+}
 
 @media (max-width: 768px) {
   #menu {
@@ -98,7 +121,6 @@ footer {
 
   .main-page {
     width: 100vw;
-    padding: 50px;
   }
 }
 @media only screen and (max-width: 768px) and (max-width: 290px) {
@@ -116,14 +138,12 @@ footer {
   }
 
   #hero {
-    width: calc(100vw - 210px);
     margin-left: 210px;
   }
 
   .main-page {
     width: calc(100vw - 210px);
     margin-left: 210px;
-    padding: 50px;
   }
 }
 .main-page {
@@ -131,6 +151,7 @@ footer {
   flex-direction: column;
   align-items: center;
   background-color: #0D0208;
+  padding: 50px;
 }
 
 .hamburger-menu {
@@ -279,8 +300,14 @@ footer {
 #hero .scroll-down {
   position: absolute;
   bottom: 0;
+  left: 50%;
 }
-@keyframes animate-down {
+@media (max-width: 768px) {
+  #hero .scroll-down {
+    left: calc(50% - 50px);
+  }
+}
+@keyframes animate-bounce-down {
   0% {
     transform: translateY(0) scale(1);
   }
@@ -297,45 +324,58 @@ footer {
     transform: translateY(0) scale(1);
   }
 }
-#hero .scroll-down:hover {
-  animation: animate-down 1s;
-}
-#hero .scroll-down:focus {
-  animation: animate-down 1s;
-}
-#hero .scroll-down:active {
-  animation: animate-down 1s;
+#hero .scroll-down:hover, #hero .scroll-down:focus, #hero .scroll-down:active {
+  animation: animate-bounce-down 1s;
 }
 
 #project {
-  margin: 80px 0 0;
+  width: 100%;
   max-width: 1300px;
 }
 #project .project-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 80px 0 0;
+  max-width: 360px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen\0  {
+  #project .project-card {
+    width: auto;
+    height: auto;
+    margin: 20px;
+  }
+}
+#project .project-card _:-ms-fullscreen, #project .project-card :root {
+  width: auto;
+  height: auto;
+  margin: 20px;
 }
 #project .project-card img {
   border: solid 2px grey;
   border-radius: 15px;
   height: 230px;
+  min-height: 230px;
   width: 100%;
-  max-width: 360px;
   object-fit: cover;
   box-shadow: 0 0 20px grey;
   transform: scale(1);
-  transition: box-shadow 1s ease, transform 0.4s ease;
+  transition: box-shadow 1s ease, transform 0.4s ease, filter 0.4s ease;
 }
 @media screen\0  {
   #project .project-card img {
     height: auto;
+    max-height: 230px;
     width: 100%;
+    -ms-interpolation-mode: bicubic;
   }
 }
 #project .project-card img _:-ms-fullscreen, #project .project-card img :root {
   height: auto;
+  max-height: 230px;
   width: 100%;
+  -ms-interpolation-mode: bicubic;
 }
 #project .project-card:hover img {
   filter: brightness(60%);
@@ -349,9 +389,20 @@ footer {
   padding-left: 20px;
   color: #bbb;
   z-index: 1;
+  word-wrap: normal;
+}
+@media screen\0  {
+  #project .project-card .title {
+    width: 100%;
+    -ms-word-wrap: normal;
+  }
+}
+#project .project-card .title _:-ms-fullscreen, #project .project-card .title :root {
+  width: 100%;
+  -ms-word-wrap: normal;
 }
 #project .project-card .title h2 {
-  font-size: 2rem;
+  font-size: auto;
   margin-bottom: 0px !important;
 }
 #project .project-card .title p {
@@ -378,14 +429,14 @@ footer {
 #contact textarea, #contact input {
   width: 100%;
   margin: 5px 0;
+  padding: 3px 10px;
   height: 2.4rem;
   line-height: 1.5rem;
   font-size: 1.1rem;
   color: white;
-  background-color: #C63581;
+  background-color: #BA0B67;
   border: solid 2px #999;
   border-radius: 15px;
-  padding: 3px 5px;
 }
 #contact textarea:focus, #contact input:focus {
   color: white;
@@ -401,7 +452,7 @@ footer {
   min-height: 60px;
   min-width: 130px;
   color: white;
-  background-color: #C63581;
+  background-color: #BA0B67;
   border: solid 3px #999;
   border-radius: 30px;
   font-size: 1.1rem;
@@ -410,29 +461,44 @@ footer {
 #contact button:hover, #contact button:focus, #contact button:active {
   transform: scale(1.2);
   color: white;
-  background-color: #96004F;
-  border: solid 5px white;
+  border: solid 3px white;
 }
 
 #contact {
   display: flex;
-  justify-self: flex-start;
-  align-self: center;
+  width: 100%;
   max-width: 1300px;
   margin: 80px 0 30px;
-  padding: 30px 0;
+  padding: 30px 30px;
   border: solid 3px #00530A;
   border-radius: 30px;
 }
-#contact .contact-card {
-  flex: 2 1 40%;
-  margin: 0 10px;
+#contact .contact-copy {
+  flex: 1 1 40%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #contact .contact-copy {
+    margin: 0 30px 0 0;
+  }
+}
+@media (min-width: 768px) {
+  #contact .inline-form {
+    display: none;
+  }
 }
 #contact .contact-form {
-  flex: 3 3 60%;
+  flex: 3 1 60%;
+}
+@media (max-width: 768px) {
+  #contact .contact-form {
+    display: none;
+  }
 }
 #contact textarea {
   height: calc(1.5rem * 6);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #contact .email {
   display: block;
@@ -441,33 +507,6 @@ footer {
 }
 #contact button {
   margin-bottom: 20px;
-}
-
-@keyframes animate-up {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  40% {
-    transform: translateY(30px) scale(1.1);
-  }
-  50% {
-    transform: translateY(0) scale(1);
-  }
-  60% {
-    transform: translateY(15px) scale(1.2);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-.scroll-up:hover {
-  animation: animate-up 1s;
-}
-.scroll-up:focus {
-  animation: animate-up 1s;
-}
-.scroll-up:active {
-  animation: animate-up 1s;
 }
 
 #about-me {

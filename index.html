@@ -4,12 +4,14 @@
     <title>Lee Whiting - Portfolio</title>
 
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- <link rel="stylesheet" href="css/prefix_css.css"> -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="menu" class="section">
@@ -44,15 +46,14 @@
 <div class="main-page">
     <div id="project" class="section">
         <div class="container">
-            <div class="row g-5">
+            <div class="center row g-5">
                 <div class="col-12 col-md-6 col-xl-4">
                     <a href="#">
                         <div class="project-card">
                             <img src="img/projects/netmatters.png" alt="Netmatters Site Recreation">
                             <div class="title">
-                                <h2>Netmatters.co.uk Recreation</h2>
+                                <h2>Netmatters Website Recreation</h2>
                                 <p>View Project<span class="arrow"><i class="fas fa-hand-point-right"></i></span></p>
-                                
                             </div>
                         </div>
                     </a>
@@ -116,11 +117,11 @@
         </div>
     </div>
     <div id="contact" class="section">
-        <div class="contact-card">
+        <div class="contact-copy">
             <h2>Get in Touch</h2>
             <p>Please feel free to contact me using the form regarding my web development skills and your business needs.</p>
-            <div class="contact-form container d-flex d-md-none">
-                <form method="POST" action="#">
+            <form class="inline-form" method="POST" action="#">
+                <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <input type="text" placeholder="First Name*" name="firstName">
@@ -141,19 +142,19 @@
                             <button type="submit">Submit</button>
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
             <a href="tel:01603704020">01603 70 40 20</a>
             <a class="email" href="mailto:info@netmatters.com">info@netmatters.com</a>
             <p>Please also feel free to contact Netmatters about their scion scheme and how partnering can benefit your business.</p>
         </div>
-        <div class="contact-form container d-none d-md-flex">
+        <div class="contact-form container">
             <form method="POST" action="#">
                 <div class="row">
-                    <div class="col-12 col-xl-6">
+                    <div class="col-md-12 col-xl-6">
                         <input type="text" placeholder="First Name*" name="firstName">
                     </div>
-                    <div class="col-12 col-xl-6">
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <input type="text" placeholder="Last Name*" name="lastName">
                     </div>
                     <div class="col-12">

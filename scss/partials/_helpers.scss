@@ -2,7 +2,6 @@
 .center{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .section:target{
@@ -20,8 +19,5 @@
     color: whitesmoke;
     i{
         font-size:30px;
-    }
-    &:hover{
-        color: whitesmoke;
     }
 }
