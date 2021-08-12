@@ -89,6 +89,7 @@
 }
 
 @mixin MQ($bp, $func){
+    $adjusted:0;
     @if not map-has-key($MQ_breakpoints_map,$bp){
         @error "Your passing a breakpoint to @mixin MQ PARAM 1 which isn't valid. You passed '#{$bp}' the acceptable values can be found in $MQ_breakpoints_map.";
     }@else if not map-has-key($MQ_func_map, $func){
