@@ -3,10 +3,21 @@
 @import "partials/variables";
 @import "partials/helpers";
 
+@font-face {
+    font-family: bitwise;
+    src: url(../fonts/bitwise.regular.ttf);
+  }
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+}
 
 body{
     font-family: Arial, Helvetica, sans-serif;
     color: #bbb;
+    overflow-x: -moz-hidden-unscrollable;
+    overflow-x: hidden;
     a{
         text-decoration: none;
         color: $matrix-purple-light;
@@ -101,7 +112,6 @@ footer{
         margin-left: $menu_width;
     }
     .main-page{
-        // width: calc(100% - 210px);
         margin-left: $menu_width;
     }
 }
@@ -137,6 +147,7 @@ footer{
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 3;
     height: 100%;
     width: $menu_width;
     background-color: $matrix-black;
@@ -199,7 +210,6 @@ footer{
         .tooltipi{
             opacity: 0;
             visibility: hidden;
-            
             position: absolute;
             z-index: 1;
             width: 120px;
@@ -213,7 +223,6 @@ footer{
             text-align: center;
             padding: 5px 0;
             border-radius: 6px;
-            
             
             font-size: 0.8rem;
         }
@@ -248,31 +257,61 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/hero_img_1.jpg');
+    background-image: url('../vid/altMatrix.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    z-index: -2;
     color: white;
     border-bottom: solid $matrix-green-dark 2px;
+    video{
+        display: none;
+        position: absolute;
+        z-index: 1;
+        top:100%;
+        left:100%;
+        min-width: 100%;
+        min-height: 100vh;
+        width: auto;
+        height: auto;
+        -webkit-transform: translateX(-100%) translateY(100%);
+        transform: translateX(-100%) translateY(-100%);
+    }
+    @media (min-width: 30em) {
+        video {
+            display:flex;
+        }
+    }   
     .hero-text{
         display: flex;
-        font-family: monospace;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h1,
-        h2{
+        z-index: 2;
+        width:100%;
+        height:auto;
+        padding: 15px;  
+        span{
             text-align: center;
+            color: $matrix-green-med-l;
+            font-family: bitwise;
+            z-index: 3;
             width: 100%;
             -ms-word-wrap: normal;
             -ms-word-break: normal;
             word-wrap: normal;
             word-break: normal;
+            font-weight: 400;
+            font-size: 6vw;
+            @include targetIEonly{
+                &:after{
+                    content: "My Name is Lee Whiting. I'm a Web Developer.";
+                    
+                }
+            }
         }
     }
     .scroll-down{
         @extend %scroll;
         position:absolute;
+        z-index: 3;
         bottom: 0;
         @include targetIEonly{
             @include MQ('md','and-smaller'){

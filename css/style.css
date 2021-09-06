@@ -3,11 +3,6 @@
   justify-content: center;
 }
 
-.section:target {
-  padding-top: 80px;
-  margin-top: -80px;
-}
-
 #hero .scroll-down, footer .scroll-up {
   display: flex;
   flex-direction: column;
@@ -21,9 +16,20 @@
   font-size: 30px;
 }
 
+@font-face {
+  font-family: bitwise;
+  src: url(../fonts/bitwise.regular.ttf);
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #bbb;
+  overflow-x: -moz-hidden-unscrollable;
+  overflow-x: hidden;
 }
 body a {
   text-decoration: none;
@@ -177,6 +183,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 3;
   height: 100%;
   width: 210px;
   background-color: #0D0208;
@@ -283,31 +290,63 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/hero_img_1.jpg");
+  background-image: url("../vid/altMatrix.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  z-index: -2;
   color: white;
   border-bottom: solid #00530A 2px;
 }
+#hero video {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  -webkit-transform: translateX(-100%) translateY(100%);
+  transform: translateX(-100%) translateY(-100%);
+}
+@media (min-width: 30em) {
+  #hero video {
+    display: flex;
+  }
+}
 #hero .hero-text {
   display: flex;
-  font-family: monospace;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  padding: 15px;
 }
-#hero .hero-text h1,
-#hero .hero-text h2 {
+#hero .hero-text span {
   text-align: center;
+  color: #0AB11F;
+  font-family: bitwise;
+  z-index: 3;
   width: 100%;
   -ms-word-wrap: normal;
   -ms-word-break: normal;
   word-wrap: normal;
   word-break: normal;
+  font-weight: 400;
+  font-size: 6vw;
+}
+@media screen\0  {
+  #hero .hero-text span:after {
+    content: "My Name is Lee Whiting. I'm a Web Developer.";
+  }
+}
+#hero .hero-text span _:-ms-fullscreen:after, #hero .hero-text span :root:after {
+  content: "My Name is Lee Whiting. I'm a Web Developer.";
 }
 #hero .scroll-down {
   position: absolute;
+  z-index: 3;
   bottom: 0;
 }
 @media screen\0  {

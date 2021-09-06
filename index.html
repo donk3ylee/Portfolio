@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
+    <script src="./JS/typeEffect/core.js" defer></script>
+    <script src="./JS/main.js" defer></script>
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- <link rel="stylesheet" href="css/prefix_css.css"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div id="menu" class="section">
+<div id="menu">
     <a class="logo" href="index.html">LW</a>
     <nav>
         <div class="menu">
@@ -33,10 +34,14 @@
     </nav>
 </div>
 <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
-<div id="hero" class="section">
+<div id="hero">
+    <video autoplay loop muted poster="./vid/altMatrix.jpg">
+        <source src="./vid/altMatrix.mp4" type="video/mp4">
+        <source src="./vid/altMatrix.webm" type="video/webm">
+        <source src="./vid/altMatrix.ogv" type="video/ogg">
+    </video>
     <div class="hero-text">
-        <h1>My Name is Lee Whiting</h1>
-        <h2>I'm a Web Developer</h2>
+        <span id="type"></span>
     </div>
     <a href="#project" class="scroll-down">
         Scroll Down
@@ -44,7 +49,7 @@
     </a>
 </div>
 <div class="main-page">
-    <div id="project" class="section">
+    <div id="project">
         <div class="container">
             <div class="center row g-5">
                 <div class="col-12 col-md-6 col-xl-4">
@@ -116,7 +121,7 @@
             </div>
         </div>
     </div>
-    <div id="contact" class="section">
+    <div id="contact">
         <div class="contact-copy">
             <h2>Get in Touch</h2>
             <p>Please feel free to contact me using the form regarding my web development skills and your business needs.</p>
