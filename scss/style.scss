@@ -444,7 +444,7 @@ footer{
     width: 100%;
     max-width:1300px;
     margin: 80px 0 30px;
-    padding: 30px 30px;
+    padding: 30px;
     @media only screen and(max-width: 350px){
         margin: 30px -30px;
         padding: 15px 15px;
@@ -452,21 +452,24 @@ footer{
     border: solid 3px $matrix-green-dark;
     border-radius: 30px;
     .contact-copy{
-        flex: 1 1 40%;
         width:100%;
-        @include MQ('md','and-wider'){
-            margin: 0 30px 0 0;
-        }
-    }
-    .inline-form{
-        @include MQ('md','and-wider'){
+        #formErrorMessages{
+            // width: max-content;
             display: none;
-        }
-    }
-    .contact-form{
-        flex: 3 1 60%;
-        @include MQ('md','and-smaller'){
-            display: none;
+            text-align: center;
+            color: black;
+            font-weight: 600;
+            background-color: crimson;
+            border: solid 3px white;
+            border-radius: 20px;
+            padding:25px;
+            ul{
+                list-style-type: none;
+                list-style: none;
+                li{
+                padding:3px 0px 0px;
+                }
+            }
         }
     }
     input{
