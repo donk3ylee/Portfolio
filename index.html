@@ -11,6 +11,8 @@
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
     <script src="./JS/typeEffect/core.js" defer></script>
     <script src="./JS/main.js" defer></script>
+    <script src="./JS/typeEffect/myType.js" defer></script>
+    <script src="./JS/formValidation.js" defer></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -33,7 +35,42 @@
         </a>
     </nav>
 </div>
-<div class="hamburger-menu"><i class="fas fa-bars"></i></div>
+<!-- <div id="slider-parent"> -->
+    <div id="slider-container">
+        <div id="x"></div>
+        <a href="index.html">
+            <div class="slider-home"></div>
+            Home
+        </a>
+        <a href="about_me.html">
+            <div class="slider-about"></div>
+            About Me
+        </a>
+        <a href="index.html#project">
+            <div class="slider-portfolio"></div>
+            My Portfolio
+        </a>
+        <a href="coding_examples.html">
+            <div class="slider-code"></div>
+            Coding Examples
+        </a>
+        <a href="scs_scheme.html">
+            <div class="slider-scheme"></div>
+            SCS Scheme
+        </a>
+        <a href="index.html#contact">
+            <div class="slider-contact"></div>
+            Contact Me
+        </a>
+        <a href="https://github.com/donk3ylee" target="_blank">
+            <div class="slider-github"></div>
+            My GitHub
+        </a>
+    </div>
+<!-- </div> -->
+<!-- <a href="#" class=""> -->
+    <div class="hamburger-menu" id="slider-trigger"><i class="fas fa-bars"></i></div>
+<!-- </a> -->
 <div id="hero">
     <video autoplay loop muted poster="./vid/altMatrix.jpg">
         <source src="./vid/altMatrix.mp4" type="video/mp4">

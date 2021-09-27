@@ -35,16 +35,16 @@ header{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    h1{
-        text-align: center;
-        width: 100%;
-        margin: 0 50px;
-    }
     @include MQ('lg','and-wider'){
         display: inline-flex;
         flex-direction: row;
         align-items: center;
         width: 100%;
+    }
+    h1{
+        text-align: center;
+        width: 100%;
+        margin: 0 50px;
     }
     .header-image{
         margin: 0 0 60px;
@@ -140,6 +140,98 @@ footer{
     }
 }
 
+// // slider menu start
+#slider-trigger{
+    cursor: pointer;
+}
+
+// .slider-parent{
+//     position: fixed;
+//     top: 0;
+//     left: calc($slider-menu-width * -1px);
+//     transition: 1s all linear;
+// }
+
+#slider-container{
+    display: none;
+    flex-direction: column; //
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 40px 0;
+    z-index: 4;
+    max-width: $slider-menu-width;
+    width: 100%;
+    height: 100vh;
+    background:white;
+    border: solid 3px firebrick; 
+    opacity: 0.8;
+    .slider-home{
+        margin-top: 40px;
+    @include place-awesome-icon('home', 30px);
+}
+.slider-about{
+    @include place-awesome-icon('about', 30px);
+    
+}
+.slider-portfolio{
+    @include place-awesome-icon('portfolio', 30px);
+    
+}
+.slider-code{
+    @include place-awesome-icon('code', 30px);
+    
+}
+.slider-scheme{
+    @include place-awesome-icon('scheme', 30px);
+}
+.slider-contact{
+    @include place-awesome-icon('contact', 30px);
+}
+.slider-github{
+    @include place-awesome-icon('github', 30px);
+}
+
+    .slider-contact{
+
+    }
+    a{
+        font-size: 1rem;
+        font-weight: 450;
+        margin: 10px;
+        text-decoration: none;
+        &:hover{
+            font-weight: 550;
+        }
+    }
+
+}
+
+#x{
+    position: fixed;
+    top: 10px;
+    left: $slider-menu-width - 30px;
+    height: 20px;
+    width: 20px;
+    z-index: 5;
+    cursor: pointer;
+    color:black;
+    @include place-awesome-icon('closeX',20px,'after');
+    &:hover{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        opacity: 1;
+        background-color: black;
+        color:white;
+    }
+}
+// // slider menu END
+
 #menu{
     flex-direction: column;
     justify-content: flex-start;
@@ -147,7 +239,7 @@ footer{
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-    z-index: 3;
+    z-index: 2;
     height: 100%;
     width: $menu_width;
     background-color: $matrix-black;
@@ -236,8 +328,8 @@ footer{
         100% {-webkit-opacity: 1; -webkit-visibility: visible;}
     } 
     .tooltip-container:hover .tooltipi{
-        animation: fadeIn 1s ease both;
         -webkit-animation: fadeIn 1s both alternate;
+        animation: fadeIn 1s ease both;
     }
     // @keyframes fadeOut{
     //     0% {opacity: 1; visibility: visible;}
@@ -265,7 +357,6 @@ footer{
     color: white;
     border-bottom: solid $matrix-green-dark 2px;
     video{
-        display: none;
         position: absolute;
         z-index: 1;
         top:100%;
@@ -416,7 +507,6 @@ footer{
         color: white;
         background-color: $matrix-black;
         border: solid 3px white;
-        outline: none;
     }
     &::placeholder{
         color: #bbb;
@@ -454,7 +544,6 @@ footer{
     .contact-copy{
         width:100%;
         #formErrorMessages{
-            // width: max-content;
             display: none;
             text-align: center;
             color: black;
@@ -464,8 +553,6 @@ footer{
             border-radius: 20px;
             padding:25px;
             ul{
-                list-style-type: none;
-                list-style: none;
                 li{
                 padding:3px 0px 0px;
                 }

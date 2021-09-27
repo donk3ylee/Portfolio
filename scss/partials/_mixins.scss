@@ -1,3 +1,31 @@
+@mixin place-awesome-icon($glyph, $size: null, $orientation: 'before'){
+    $awesome_icon_map:(
+        'closeX':'\f00d',
+        'home':'\f015',
+        'about':'\f128',
+        'portfolio':'\f5c3',
+        'code':'\f1c9',
+        'scheme':'\f19d',
+        'contact':'\f1fa',
+        'github':'\f092',
+
+        
+        );
+        @if map-has-key($awesome_icon_map,$glyph){
+        font-size: $size;
+        line-height: normal;
+        overflow: visible;
+        &::#{$orientation}{
+            display: flex;
+            justify-content: center;
+            font-family: FontAwesome!important;
+            content: map-get($awesome_icon_map,$glyph);
+            @content;
+        }
+    }@else{
+        @error "Your trying to call the font name '#{$name}' which does not exist in the awesome_icon_map used in the @mixin place-awesome-icon().";
+    }
+}
 
 @mixin scroll-down-bounce-animation{
     @keyframes animate-bounce-down {
