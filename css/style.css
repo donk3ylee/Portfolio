@@ -190,7 +190,6 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   position: fixed;
   top: 0px;
   left: 0px;
-  padding: 40px 0;
   z-index: 4;
   max-width: 150px;
   width: 100%;
@@ -198,6 +197,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   background: white;
   border: solid 3px firebrick;
   opacity: 0.8;
+  overflow-y: auto;
 }
 #slider-container .slider-home {
   margin-top: 40px;
@@ -280,7 +280,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #slider-container a {
   font-size: 1rem;
   font-weight: 450;
-  margin: 10px;
+  margin: max(5px, calc((((100vh - (40px + 30px)) / 8) - 50px) / 2)) 10px;
   text-decoration: none;
 }
 #slider-container a:hover {

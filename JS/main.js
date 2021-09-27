@@ -3,6 +3,7 @@ const sliderTrigger = document.getElementById('slider-trigger');
 const sliderCloser = document.getElementById('x');
 
 sliderTrigger.addEventListener("click", function(e){
+    // document.getElementById("slider-container").classList.add('slider-active');
     document.getElementById("slider-container").style.display = "flex";
     document.getElementById("x").style.display = "flex";
 });
@@ -15,4 +16,5 @@ window.addEventListener("resize", function(e){
 
 sliderCloser.addEventListener("click", function(e){
     document.getElementById("slider-container").style.display = "none";
+    // document.getElementById("slider-container").classList.add('slider-container');
 });

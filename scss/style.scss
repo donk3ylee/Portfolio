@@ -145,12 +145,6 @@ footer{
     cursor: pointer;
 }
 
-// .slider-parent{
-//     position: fixed;
-//     top: 0;
-//     left: calc($slider-menu-width * -1px);
-//     transition: 1s all linear;
-// }
 
 #slider-container{
     display: none;
@@ -161,7 +155,6 @@ footer{
     position: fixed;
     top: 0px;
     left: 0px;
-    padding: 40px 0;
     z-index: 4;
     max-width: $slider-menu-width;
     width: 100%;
@@ -169,45 +162,40 @@ footer{
     background:white;
     border: solid 3px firebrick; 
     opacity: 0.8;
+    overflow-y: auto;
     .slider-home{
         margin-top: 40px;
-    @include place-awesome-icon('home', 30px);
-}
-.slider-about{
-    @include place-awesome-icon('about', 30px);
-    
-}
-.slider-portfolio{
-    @include place-awesome-icon('portfolio', 30px);
-    
-}
-.slider-code{
-    @include place-awesome-icon('code', 30px);
-    
-}
-.slider-scheme{
-    @include place-awesome-icon('scheme', 30px);
-}
-.slider-contact{
-    @include place-awesome-icon('contact', 30px);
-}
-.slider-github{
-    @include place-awesome-icon('github', 30px);
-}
-
+        @include place-awesome-icon('home', 30px);
+    }
+    .slider-about{
+        @include place-awesome-icon('about', 30px);
+    }
+    .slider-portfolio{
+        @include place-awesome-icon('portfolio', 30px);
+    }
+    .slider-code{
+        @include place-awesome-icon('code', 30px);
+    }
+    .slider-scheme{
+        @include place-awesome-icon('scheme', 30px);
+    }
     .slider-contact{
-
+        @include place-awesome-icon('contact', 30px);
+    }
+    .slider-github{
+        @include place-awesome-icon('github', 30px);
     }
     a{
         font-size: 1rem;
         font-weight: 450;
-        margin: 10px;
+        // Margin calc is for top and bottom to make the margin sizes  f menu items) - height of icon [plus margin top and bottom]) / 2 to get space for top and bottom margins otherwise were doubling 
+        // I included a min function so that margins cannot me negative. This way when I include overflow-y:auto if a mobile is in landscape orientation the menu icons aren't on top of each other and the user can scroll the slider menu.
+        margin: max(5px, calc((((100vh - (40px + 30px)) / 8) - 50px) / 2)) 10px;
         text-decoration: none;
         &:hover{
             font-weight: 550;
         }
     }
-
 }
 
 #x{
