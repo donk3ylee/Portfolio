@@ -9,12 +9,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   color: whitesmoke;
 }
 #hero .scroll-down i, footer .scroll-up i {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 @font-face {
@@ -34,6 +34,7 @@ body {
 }
 body a {
   text-decoration: none;
+  word-wrap: break-word;
   color: #C63581;
 }
 body a:hover, body a:focus, body a:active {
@@ -55,7 +56,9 @@ header {
   }
 }
 header h1 {
+  display: block;
   text-align: center;
+  font-size: 2.5rem;
   width: 100%;
   margin: 0 50px;
 }
@@ -68,9 +71,6 @@ header .header-image {
   border-radius: 50%;
   border: solid 3px white;
   object-fit: cover;
-}
-header h1 {
-  display: block;
 }
 
 main {
@@ -335,9 +335,36 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   align-items: center;
   width: 210px;
   height: 210px;
-  border-bottom: #00530A solid 2px;
-  font-size: 100px;
-  color: #bbb;
+}
+#menu .logo img {
+  height: 160px;
+  width: 160px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#menu .logo img:hover, #menu .logo img:focus, #menu .logo img:active {
+  animation: pulse 1s;
 }
 #menu .menu {
   display: flex;
@@ -346,11 +373,10 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   align-items: center;
   width: 210px;
   height: fit-content;
-  padding: 60px 0 10px;
 }
 #menu .menu a {
   margin: 20px 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   position: relative;
 }
 #menu .menu a:after {
@@ -370,7 +396,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 35px;
   font-size: 50px;
   height: 50px;
   width: 50px;
@@ -447,7 +473,10 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   min-height: 100vh;
   width: auto;
   height: auto;
-  -webkit-transform: translateX(-100%) translateY(100%);
+  -webkit-transform: translateX(-100%) translateY(-100%);
+  -moz-transform: translateX(-100%) translateY(-100%);
+  -o-transform: translateX(-100%) translateY(-100%);
+  -ms-transform: translateX(-100%) translateY(-100%);
   transform: translateX(-100%) translateY(-100%);
 }
 @media (min-width: 30em) {
@@ -473,7 +502,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   word-wrap: normal;
   word-break: normal;
   font-weight: 400;
-  font-size: 6vw;
+  font-size: 4.5vw;
 }
 @media screen\0  {
   #hero .hero-text span:after {
@@ -529,7 +558,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 
 #project {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 20px 0 0;
 }
 #project .project-card {
@@ -604,6 +633,10 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   font-size: auto;
   margin-bottom: 0px !important;
 }
+#project .project-card .title .desc {
+  font-size: 0.9rem;
+  word-wrap: normal;
+}
 #project .project-card .title p {
   margin-bottom: 0px;
   font-size: 1.2rem;
@@ -636,6 +669,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   background-color: #BA0B67;
   border: solid 2px #999;
   border-radius: 15px;
+  outline: none;
 }
 #contact textarea:focus, #contact input:focus {
   color: white;
@@ -665,7 +699,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #contact {
   display: flex;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1000px;
   margin: 80px 0 30px;
   padding: 30px;
   border: solid 3px #00530A;
@@ -685,8 +719,9 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   text-align: center;
   color: black;
   font-weight: 600;
-  background-color: crimson;
-  border: solid 3px white;
+  background-color: yellow;
+  opacity: 0.8;
+  border: solid 3px #C63581;
   border-radius: 20px;
   padding: 25px;
 }
@@ -717,29 +752,18 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   width: 100%;
 }
 
-#coding-example-hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../img/coding_example.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  color: white;
-  border-bottom: solid #00530A 2px;
+#coding-examples {
+  max-width: 1000px;
+  width: 100%;
 }
-#coding-example-hero .hero-text {
-  display: flex;
-  font-family: monospace;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#coding-examples p {
+  margin: 25px 0;
 }
-@media (min-width: 770px) {
-  #coding-example-hero .hero-text {
-    margin-left: 210px;
-  }
+#coding-examples .screenshot {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

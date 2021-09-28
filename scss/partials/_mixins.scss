@@ -27,6 +27,23 @@
     }
 }
 
+@mixin pulse-animation{
+    @keyframes pulse {
+        0% {transform: scale(1);}
+        10% {transform: scale(1.1);}
+        30% {transform: scale(1);}
+        50% {transform: scale(1.2);}
+        80% {transform: scale(1);}
+        90% {transform: scale(1.1);}
+        100% {transform: scale(1);}
+    } 
+    &:hover,
+    &:focus,
+    &:active{
+        animation: pulse 1s;
+    }
+}
+
 @mixin scroll-down-bounce-animation{
     @keyframes animate-bounce-down {
         0% {transform: translateY(0) scale(1);}

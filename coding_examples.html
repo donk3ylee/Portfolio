@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Lee Whiting - Coding Examples</title>
+    <title>Lee Whiting - SCS Scion Scheme</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
     <script src="./JS/typeEffect/core.js" defer></script>
     <script src="./JS/main.js" defer></script>
+    <link href="./css/prism.css" rel="stylesheet" />
+    <script src="./JS/prism/prism.js" defer></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="menu" class="section">
-    <a class="logo" href="index.html">LW</a>
+<div id="menu">
+    <a class="logo" href="index.html"><img src="img/LW-logo.jpg" alt="Lee Whiting Web Developer"></a>
     <nav>
         <div class="menu">
             <a href="about_me.html">About Me</a>
@@ -64,19 +66,158 @@
     </a>
 </div>
 <div class="hamburger-menu" id="slider-trigger"><i class="fas fa-bars"></i></div>
-<div id="coding-example-hero">
-    <div class="hero-text">
-        <h1>Coding Examples</h1>
-        <h2>Coming Soon......</h2>
+<div class="main-page">
+    <div id="coding-examples">
+        <header>
+            <img src="img/coding_example.jpg" class="header-image">
+            <h1>Examples of My Coding</h1>
+        </header>
+        <main>
+            <h2>Netmatters Reflection</h2>
+            <p>This was a learning task to build a detailed copy of the Netmatters homepage. Firstly in html/css/sass and then adding javascript functionality and back-end processing.</p>
+            <h3>Sass Looping</h3>
+            <p>Sass looping in order to build dynamic classes which includes bespoke colours / pseudo icon insertion.</p>
+            <pre class="code">
+                <code class="language-sass">
+
+@each $name, $color in $menu_color_map{
+    #menu-top .wrapper-#{$name}{
+        .button-#{$name}{
+            @include flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 19px 0 18px;
+            height: 100px; 
+            width: 200px;
+            @include MQ('3','and-smaller'){
+                width: 160px;
+            }
+            color: white;
+            text-decoration: none;
+            padding-bottom:10px;
+        }
+        &:hover{
+            color: white;
+            background-color: #{$color};
+            .icon{  // make icons white on hover.
+                color:white;
+            }
+            .submenu{
+                a{
+                    color: white;
+                    align-self: center;
+                    text-decoration: none;
+                }
+                @include flex;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                z-index: 1;
+                font-size: 1rem;
+                @include MQ('3','and-smaller'){
+                    width: 90vw;
+                    left: 5vw;
+                }
+                height: 45px;
+                @include make-bgcolor-wide(darken($color, $darken-submenu-amt));
+                @include fix-normalize-transparency($color);
+            }
+        }
+    }
+    .icon{
+        &-#{$name}{
+            color: #{$color};
+            padding-bottom: 8px;
+            @include place-awesome-icon(unquote("#{$name}"),$size: 1.328rem);
+            @if(unquote("#{$name}")=="telecom"){
+                @include rotate-phone-icon;
+            }
+        }
+    }
+}
+                </code>
+            </pre>
+            <p>The colour map it references is this one....</p>
+            <pre class="code">
+                <code class="language-sass">
+
+$menu_color_map:(
+'design': $color-design,
+'support':$color-support,
+'telecom':$color-telecom,
+'software':$color-software,
+'marketing':$color-marketing,
+'security':$color-security,
+);
+                </code>
+            </pre>
+            <p>and the html it relates to is......</p>
+            <pre class="code">
+                <code class="language-html">
+
+&lt;div class="wrapper-top-menu"&gt;
+    &lt;div id="menu-top"&gt;
+        &lt;div class="wrapper-design"&gt;
+            &lt;a class="button-design" href="#"&gt;
+                &lt;div class="icon icon-design"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;Web&lt;/span&gt;Design
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper-support"&gt;
+            &lt;a  class="button-support" href="#"&gt;
+                &lt;div class="icon icon-support"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;It&lt;/span&gt;Support
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper-telecom"&gt;
+            &lt;a  class="button-telecom" href="#"&gt;
+                &lt;div class="icon icon-telecom"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;Telecom&lt;/span&gt;Services
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper-software"&gt;
+            &lt;a  class="button-software" href="#"&gt;
+                &lt;div class="icon icon-software"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;Bespoke&lt;/span&gt;Software
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper-marketing"&gt;
+            &lt;a  class="button-marketing" href="#"&gt;
+                &lt;div class="icon icon-marketing"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;Digital&lt;/span&gt;Marketing
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="wrapper-security"&gt;
+            &lt;a  class="button-security" href="#"&gt;
+                &lt;div class="icon icon-security"&gt;&lt;/div&gt;
+                &lt;span class="small"&gt;Cyber&lt;/span&gt;Security
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+            <p>The end result is a menu built from efficient sass code which has unique colouring and icon inclusion.</p>
+            <img class="screenshot" src="img/codingExamples/menu_loopin_sass.png" alt="A screenshot of the menu in my Netmatters reflection build.">
+            <h2>Further....</h2>
+            <p>If your interested in finding out more about my current skill-set or want to discuss any open positions which you feel may suit me, please don't hesitate to
+                <a href="index.html#contact"> contact me.</a>
+            </p>
+        </main>
+        <footer>
+            <a href="#top">
+                <div class="scroll-up">
+                    <i class="fas fa-chevron-up"></i>
+                    Scroll Up
+                </div>
+            </a>
+        </footer>
     </div>
-    <!-- <a href="#project" class="scroll-down">
-        Scroll Down
-        <i class="fas fa-chevron-down"></i>
-    </a> -->
-</div>
-<div id="coding_examples">
-
-
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
