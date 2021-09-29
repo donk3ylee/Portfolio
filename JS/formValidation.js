@@ -42,7 +42,7 @@ contactForm.addEventListener('submit',function(e){
     const regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     if(formArray[2].value!==""){
         if(!regex.test(formArray[2].value)){
-            validationErrorsArray.push(`<li>The email address you supplied is not a valid email address. please fix this.</li>\n`);
+            validationErrorsArray.push("<li>The email address you supplied is not a valid email address. please fix this.</li>\n");
         }
     }
     // If there are errors build and the validation error messages to be shown to the user

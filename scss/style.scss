@@ -598,28 +598,30 @@ footer{
     .tech-breakdown{
         display: flex;
         justify-content: flex-start;
+        flex-direction: column;
         margin: 0 0 30px;
         .breakdown-item{
             display: flex;
             align-items: center;
-            margin: 0 6vw 0 0;
-            font-size: min(2rem, 5vw);
+            .value{
+                font-size: 1.5rem;
+            }
             &.markup{
                 color: $html5-orange;
-                @include place-awesome-icon('html'){
-                    font-size: min(4rem, 8vw);
+                @include place-awesome-icon('html', 3rem, 'after'){
+                    margin-left: 2rem;
                 }
             }
             &.sass{
                 color: $sass-pink;
-                @include place-awesome-icon('sass'){
-                    font-size: min(4rem, 8vw);
+                @include place-awesome-icon('sass', 3rem, 'after'){
+                    margin-left: 2rem;
                 }
             }
             &.javascript{
                 color: $javascript-yellow;
-                @include place-awesome-icon('javascript'){
-                    font-size: min(4rem, 8vw);
+                @include place-awesome-icon('javascript', 3rem, 'after'){
+                    margin-left: 2rem;
                 }
             }
         }
