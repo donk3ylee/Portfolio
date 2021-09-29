@@ -595,28 +595,33 @@ footer{
         height: auto;
         margin-bottom: 20px;
     }
+    .tech-breakdown{
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 0 30px;
+        .breakdown-item{
+            display: flex;
+            align-items: center;
+            margin: 0 6vw 0 0;
+            font-size: min(2rem, 5vw);
+            &.markup{
+                color: $html5-orange;
+                @include place-awesome-icon('html'){
+                    font-size: min(4rem, 8vw);
+                }
+            }
+            &.sass{
+                color: $sass-pink;
+                @include place-awesome-icon('sass'){
+                    font-size: min(4rem, 8vw);
+                }
+            }
+            &.javascript{
+                color: $javascript-yellow;
+                @include place-awesome-icon('javascript'){
+                    font-size: min(4rem, 8vw);
+                }
+            }
+        }
+    }
 }
-
-
-// #coding-example-hero{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background-image: url('../img/coding_example.jpg');
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     height: 100vh;
-//     width: 100vw;
-//     color: white;
-//     border-bottom: solid $matrix-green-dark 2px;
-//     .hero-text{
-//         display: flex;
-//         font-family:monospace;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         @include MQ('md','and-wider'){
-//             margin-left: $menu_width;
-//         }
-//     }
-// }
