@@ -41,6 +41,13 @@ body a:hover, body a:focus, body a:active {
   color: #96004F;
 }
 
+@media screen and (max-width: 430px) {
+  code .code {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -130,11 +137,6 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
     width: 100%;
   }
 }
-@media only screen and (max-width: 770px) and (max-width: 290px) {
-  .main-page {
-    padding: 50px 10px 50px 60px;
-  }
-}
 @media (min-width: 770px) {
   #menu {
     display: flex;
@@ -158,7 +160,12 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   flex-direction: column;
   align-items: center;
   background-color: #0D0208;
-  padding: 50px;
+  padding: 3px;
+}
+@media screen and (min-width: 430px) {
+  .main-page {
+    padding: 50px;
+  }
 }
 
 .hamburger-menu {
@@ -614,7 +621,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 }
 #project .project-card .title {
   align-self: flex-start;
-  padding-left: 20px;
+  padding: 20px 0 0 20px;
   color: #bbb;
   z-index: 1;
   word-wrap: normal;
@@ -631,11 +638,11 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 }
 #project .project-card .title h2 {
   font-size: auto;
-  margin-bottom: 0px !important;
 }
 #project .project-card .title .desc {
   font-size: 0.9rem;
   word-wrap: normal;
+  margin-bottom: 8px;
 }
 #project .project-card .title p {
   margin-bottom: 0px;
@@ -644,40 +651,34 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   justify-content: left;
   align-items: center;
 }
-#project .project-card:hover .title {
+#project .project-card .title:hover {
   color: white;
 }
-#project .project-card .arrow {
-  font-size: 35px;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
-}
-#project .project-card:hover .arrow {
-  opacity: 1;
-  transform: translateX(100%) rotateX(360deg);
+#project .project-card .title:hover .view {
+  color: #C63581;
 }
 
-#contact textarea, #contact input {
+#contact .email, #contact textarea, #contact input {
   width: 100%;
   margin: 5px 0;
   padding: 3px 10px;
   height: 2.4rem;
   line-height: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: white;
   background-color: #BA0B67;
   border: solid 2px #999;
   border-radius: 15px;
   outline: none;
 }
-#contact textarea:focus, #contact input:focus {
+#contact .email:focus, #contact textarea:focus, #contact input:focus {
   color: white;
   background-color: #0D0208;
   border: solid 3px white;
 }
-#contact textarea::placeholder, #contact input::placeholder {
+#contact .email::placeholder, #contact textarea::placeholder, #contact input::placeholder {
   color: #bbb;
+  font-size: 0.9rem;
 }
 
 #contact button {
@@ -717,15 +718,16 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #contact .contact-copy #formErrorMessages {
   display: none;
   text-align: center;
-  color: black;
+  color: white;
   font-weight: 600;
-  background-color: yellow;
+  background-color: black;
   opacity: 0.8;
   border: solid 3px #C63581;
   border-radius: 20px;
   padding: 25px;
 }
 #contact .contact-copy #formErrorMessages ul li {
+  list-style: none;
   padding: 3px 0px 0px;
 }
 #contact textarea {

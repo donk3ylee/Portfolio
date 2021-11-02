@@ -30,6 +30,14 @@ body{
     }
 }
 
+// override for prism to get responsive margins
+code .code{
+    @media screen and (max-width: 430px){
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
 // common to all internal pages except index
 header{
     display: flex;
@@ -94,10 +102,6 @@ footer{
     }
     .main-page{
         width: 100%;
-        // Media query here test for smallest mobile to shift contents right in order to extend pass the scrolling fixed hamburger menu icon
-        @media only screen and(max-width:290px){
-            padding: 50px 10px 50px 60px;
-        }
     }
 }
 @include MQ('md','and-wider'){  //  Larger screen sizes: Hide the hamburger menu icon and show the side menu also set the margin-left by the menu width to prevent the page from slipping under the menu.
@@ -121,7 +125,10 @@ footer{
     flex-direction: column;
     align-items: center;
     background-color: $matrix-black;
-    padding: 50px;
+    padding: 3px;
+    @media screen and (min-width: 430px){
+        padding: 50px;
+    }
 }  
 
 .hamburger-menu{
@@ -443,7 +450,7 @@ footer{
         }
         .title{
             align-self: flex-start;
-            padding-left: 20px;
+            padding: 20px 0 0 20px;
             color: #bbb;
             z-index: 1;
             word-wrap: normal;
@@ -453,11 +460,11 @@ footer{
             }
             h2{
                 font-size: auto;
-                margin-bottom:0px!important;
             }
             .desc{
                 font-size: 0.9rem;
                 word-wrap:normal;
+                margin-bottom: 8px;
             }
             p{
                 margin-bottom:0px;
@@ -466,20 +473,23 @@ footer{
                 justify-content: left;
                 align-items: center;
             }
+            &:hover{
+                color: white;
+                .view{
+                    color: $matrix-purple-light;
+                }
+            }
         }
-        &:hover .title{
-            color: white;
-        }
-        .arrow{
-            font-size: 35px;
-            opacity: 0;
-            transform: translateX(-100%);
-            transition: opacity 0.4s ease-in, transform 0.4s ease-in;
-        }
-        &:hover .arrow{
-            opacity: 1;
-            transform: translateX(100%) rotateX(360deg);
-        }
+        // .arrow{
+        //     font-size: 35px;
+        //     opacity: 0;
+        //     transform: translateX(-100%);
+        //     transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+        // }
+        // &:hover .arrow{
+        //     opacity: 1;
+        //     transform: translateX(100%) rotateX(360deg);
+        // }
     }
 }
 
@@ -489,7 +499,7 @@ footer{
     padding:3px 10px;
     height: 2.4rem;
     line-height: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: white;
     background-color: $matrix-purple-med-l;
     border: solid 2px #999;
@@ -502,6 +512,7 @@ footer{
     }
     &::placeholder{
         color: #bbb;
+        font-size: 0.9rem;
     }
 }
 %button{
@@ -538,15 +549,16 @@ footer{
         #formErrorMessages{
             display: none;
             text-align: center;
-            color: black;
+            color: white;
             font-weight: 600;
-            background-color: yellow;
+            background-color: black;
             opacity: 0.8;
             border: solid 3px $matrix-purple-light;
             border-radius: 20px;
             padding:25px;
             ul{
                 li{
+                list-style: none;
                 padding:3px 0px 0px;
                 }
             }
@@ -562,6 +574,7 @@ footer{
         overflow-x: hidden;
     }
     .email{
+        @extend %input;
         display: block;
         padding-bottom: 20px;
         width: fit-content;

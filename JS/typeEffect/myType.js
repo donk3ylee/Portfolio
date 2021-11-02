@@ -5,14 +5,24 @@ var typewriter = new Typewriter(app, {
  loop: true
 });
 
-typewriter.typeString('My Name is Neo.')
+typewriter.typeString('My Name is Lee Whitting.')
 .pauseFor(800)
-.deleteChars(4)
+.deleteChars(5)
 .pauseFor(300)
-.typeString('Lee Whiting.<br>')
+.typeString('ing.<br>')
 .pauseFor(1500)
 .typeString('I\'m a Web Developer.')
 .pauseFor(4000)
 .start();
+
+// typewriter.typeString('My Name is Neo.')
+// .pauseFor(800)
+// .deleteChars(4)
+// .pauseFor(300)
+// .typeString('Lee Whiting.<br>')
+// .pauseFor(1500)
+// .typeString('I\'m a Web Developer.')
+// .pauseFor(4000)
+// .start();
 // Typewriter effect END
 
