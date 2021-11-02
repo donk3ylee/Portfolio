@@ -594,6 +594,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   min-height: 230px;
   width: 100%;
   object-fit: cover;
+  filter: brightness(60%);
   box-shadow: 0 0 20px grey;
   transform: scale(1);
   transition: box-shadow 1s ease, transform 0.4s ease, filter 0.4s ease;
@@ -613,8 +614,8 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   -ms-interpolation-mode: bicubic;
 }
 #project .project-card:hover img {
-  filter: brightness(60%);
   box-shadow: 0 0 55px white;
+  filter: brightness(100%);
   transform: scale(1.2);
   border: solid 2px #BA0B67;
   z-index: 1;
