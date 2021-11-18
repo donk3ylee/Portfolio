@@ -2,6 +2,7 @@
 @import "partials/maps";
 @import "partials/variables";
 @import "partials/helpers";
+@import "partials/coding_examples";
 
 @font-face {
     font-family: bitwise;
@@ -27,14 +28,6 @@ body{
         &:active{
             color: $matrix-purple;
         }
-    }
-}
-
-// override for prism to get responsive margins
-code .code{
-    @media screen and (max-width: 430px){
-        margin: 0px;
-        padding: 0px;
     }
 }
 
@@ -603,6 +596,9 @@ footer{
     p{
         margin: 25px 0;
     }
+    h4{
+        padding-top: 20px;
+    }
     .screenshot{
         width: 100%;
         max-width: 900px;
@@ -638,6 +634,13 @@ footer{
                     margin-left: 2rem;
                 }
             }
+            &.sql{
+                color: $sql-teal;
+                @include place-awesome-icon('cubes', 3rem, 'after'){
+                    margin-left: 2rem;
+                }
+            }
+
         }
     }
 }

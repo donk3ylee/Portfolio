@@ -17,6 +17,93 @@
   font-size: 25px;
 }
 
+.italics {
+  font-style: italic;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+#accordion-wrapper {
+  width: 100%;
+  color: black;
+}
+@media screen and (max-width: 430px) {
+  #accordion-wrapper {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+#accordion-wrapper .accordion {
+  width: 100%;
+}
+#accordion-wrapper .accordion .accordion-title {
+  position: relative;
+  color: white;
+  background-color: black;
+  border: solid 3px white;
+  padding: 40px;
+}
+#accordion-wrapper .accordion .accordion-title:hover {
+  background-color: #3D3C3A;
+}
+#accordion-wrapper .accordion .accordion-title .accordion-instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: normal;
+  overflow: visible;
+}
+#accordion-wrapper .accordion .accordion-title .accordion-instructions::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#accordion-wrapper .accordion .accordion-title .contract-instructions {
+  font-size: 1.5rem;
+  line-height: normal;
+  overflow: visible;
+}
+#accordion-wrapper .accordion .accordion-title .contract-instructions::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#accordion-wrapper .accordion .accordion-body {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+}
+#accordion-wrapper .accordion .accordion-footer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  background-color: black;
+  border: solid 3px white;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+#accordion-wrapper .accordion .accordion-footer::after {
+  content: "Close the Above Section";
+}
+#accordion-wrapper .accordion .accordion-footer:hover {
+  background-color: #3D3C3A;
+}
+#accordion-wrapper .accordion .active {
+  display: flex;
+}
+
 @font-face {
   font-family: bitwise;
   src: url(../fonts/bitwise.regular.ttf);
@@ -39,13 +126,6 @@ body a {
 }
 body a:hover, body a:focus, body a:active {
   color: #96004F;
-}
-
-@media screen and (max-width: 430px) {
-  code .code {
-    margin: 0px;
-    padding: 0px;
-  }
 }
 
 header {
@@ -762,6 +842,9 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #coding-examples p {
   margin: 25px 0;
 }
+#coding-examples h4 {
+  padding-top: 20px;
+}
 #coding-examples .screenshot {
   width: 100%;
   max-width: 900px;
@@ -818,6 +901,19 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   justify-content: center;
   font-family: FontAwesome !important;
   content: "";
+  margin-left: 2rem;
+}
+#coding-examples .tech-breakdown .breakdown-item.sql {
+  color: #15AABF;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.sql::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
   margin-left: 2rem;
 }
 

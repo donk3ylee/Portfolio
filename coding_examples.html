@@ -73,20 +73,26 @@
             <h1>Examples of My Coding</h1>
         </header>
         <main>
-            <h2>Netmatters Reflection</h2>
-            <p>This was a learning task to build a detailed copy of the Netmatters homepage. Firstly in html/css/sass and then adding javascript functionality and back-end processing. The live example can be found <a href="http://netmatters.lee-whiting.netmatters-scs.co.uk" target="_blank">here.</a> An example of the code used can be found below.</p>
-            <div class="tech-breakdown">
-                <div class="breakdown-item sass" title="This Project Required the use of 54.9% SASS (Sassy CSS)">
-                    <div class="value">54.9&#37;</div>
-                </div>
-                <div class="breakdown-item markup" title="This Project Required the use of 45.1% HTML 5 Markup Language">
-                    <div class="value">45.1&#37;</div>
-                </div>
-            </div>
-            <h3>Example: Sass Looping</h3>
-            <p>This is an example of the SASS looping I used in order to build the menu. I used SASS looping to dynamically build classes and their bespoke colours and pseudo place icons.</p>
-            <pre class="code">
-                <code class="language-sass">
+            <div id="accordion-wrapper">
+                <div class="accordion">
+                    <div class="accordion-title"
+                        ><h2>Netmatters Reflection</h2>
+                        <p>This was a learning task to build a detailed copy of the Netmatters homepage. Firstly in html/css/sass and then adding javascript functionality and back-end processing. The live example can be found <a href="http://netmatters.lee-whiting.netmatters-scs.co.uk" target="_blank">here.</a> An example of the code used can be found below.</p>
+                        <div class="tech-breakdown">
+                            <div class="breakdown-item sass" title="This Project Required the use of 54.9% SASS (Sassy CSS)">
+                                <div class="value">54.9&#37;</div>
+                            </div>
+                            <div class="breakdown-item markup" title="This Project Required the use of 45.1% HTML 5 Markup Language">
+                                <div class="value">45.1&#37;</div>
+                            </div>
+                        </div>
+                        <div class="accordion-instructions"></div>
+                    </div>
+                    <div class="accordion-body">
+                        <h3>Example: Sass Looping</h3>
+                        <p>This is an example of the SASS looping I used in order to build the menu. I used SASS looping to dynamically build classes and their bespoke colours and pseudo place icons.</p>
+                        <pre class="code">
+                            <code class="language-sass">
 
 @each $name, $color in $menu_color_map{
     #menu-top .wrapper-#{$name}{
@@ -148,11 +154,11 @@
         }
     }
 }
-                </code>
-            </pre>
-            <p>The colour map it references is this one....</p>
-            <pre class="code">
-                <code class="language-sass">
+                            </code>
+                        </pre>
+                        <p>The colour map it references is this one....</p>
+                        <pre class="code">
+                            <code class="language-sass">
 
 $menu_color_map:(
 'design': $color-design,
@@ -162,11 +168,11 @@ $menu_color_map:(
 'marketing':$color-marketing,
 'security':$color-security,
 );
-                </code>
-            </pre>
-            <p>and the html it relates to is......</p>
-            <pre class="code">
-                <code class="language-html">
+                            </code>
+                        </pre>
+                        <p>and the html it relates to is......</p>
+                        <pre class="code">
+                            <code class="language-html">
 
 &lt;div class="wrapper-top-menu"&gt;
     &lt;div id="menu-top"&gt;
@@ -208,14 +214,145 @@ $menu_color_map:(
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-                </code>
-            </pre>
-            <p>The end result is a menu built from efficient sass code which has unique colouring and icon inclusion. You can <a href="http://netmatters.lee-whiting.netmatters-scs.co.uk" target="_blank">see the live example here.</a></p>
-            <img class="screenshot" src="img/codingExamples/menu_loopin_sass.png" alt="A screenshot of the menu in my Netmatters reflection build.">
-            <h2>Further....</h2>
-            <p>If your interested in finding out more about my current skill-set or want to discuss any open positions which you feel may suit me, please don't hesitate to
-                <a href="index.html#contact"> contact me.</a>
-            </p>
+                            </code>
+                        </pre>
+                        <p>The end result is a menu built from efficient sass code which has unique colouring and icon inclusion. You can <a href="http://netmatters.lee-whiting.netmatters-scs.co.uk" target="_blank">see the live example here.</a></p>
+                        <img class="screenshot" src="img/codingExamples/menu_loopin_sass.png" alt="A screenshot of the menu in my Netmatters reflection build.">
+                        <h2>Further....</h2>
+                        <p>If your interested in finding out more about my current skill-set or want to discuss any open positions which you feel may suit me, please don't hesitate to
+                            <a href="index.html#contact"> contact me.</a>
+                        </p>
+                    </div>
+                    <div class="accordion-footer">
+                    </div>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-title">
+                        <h2>Example of an SQL query containing a table join, subquery and ordering filter</h2>
+                        <p>The objective of this example is to demonstrate an SQL query which contains a table join, the use of a subquery and the use of an ordering filter. The database has two tables <span class="italics bolder">employees</span> and <span class="italics bolder">department</span>. The two tables are joined on a column in the <span class="italics bolder">employees</span> database which makes use of a foreign key constraint.</p>
+                        <div class="tech-breakdown">
+                            <div class="breakdown-item sql" title="This Project Was Built Using 100% SQL">
+                                <div class="value">100&#37; SQL </div>
+                            </div>
+                        </div>
+                        <div class="accordion-instructions"></div>
+                    </div>
+                    <div class="accordion-body">
+                        <h2>Database Schemas and Contents</h2>
+                        
+                        <h4>The Schema of the <span class="italics bolder">employees</span> table is:</h4>
+                        <pre class="code">
+                            <code class="language-sql">
+
+  +------------+---------------+------+-----+---------+-------+
+  | Field      | Type          | Null | Key | Default | Extra |
+  +------------+---------------+------+-----+---------+-------+
+  | emp_id     | int           | NO   | PRI | NULL    |       |
+  | emp_name   | varchar(15)   | NO   |     | NULL    |       |
+  | job_name   | varchar(10)   | NO   |     | NULL    |       |
+  | manager_id | int           | YES  |     | NULL    |       |
+  | hire_date  | date          | NO   |     | NULL    |       |
+  | salary     | decimal(10,2) | NO   |     | NULL    |       |
+  | commission | decimal(7,2)  | YES  |     | NULL    |       |
+  | dep_id     | int           | NO   | MUL | NULL    |       |
+  +------------+---------------+------+-----+---------+-------+
+                            </code>
+                        </pre>
+                        <h4>The contents of the <span class="italics bolder">employees</span> table:</h4>
+                        <pre class="code">
+                            <code class="language-sql">
+
+   emp_id | emp_name | job_name  | manager_id | hire_date  | salary  | commission | dep_id
+  --------+----------+-----------+------------+------------+---------+------------+--------
+    68319 | KAYLING  | PRESIDENT |            | 1991-11-18 | 6000.00 |            |   1001
+    66928 | BLAZE    | MANAGER   |      68319 | 1991-05-01 | 2750.00 |            |   3001
+    67832 | CLARE    | MANAGER   |      68319 | 1991-06-09 | 2550.00 |            |   1001
+    65646 | JONAS    | MANAGER   |      68319 | 1991-04-02 | 2957.00 |            |   2001
+    67858 | SCARLET  | ANALYST   |      65646 | 1997-04-19 | 3100.00 |            |   2001
+    69062 | FRANK    | ANALYST   |      65646 | 1991-12-03 | 3100.00 |            |   2001
+    63679 | SANDRINE | CLERK     |      69062 | 1990-12-18 |  900.00 |            |   2001
+    64989 | ADELYN   | SALESMAN  |      66928 | 1991-02-20 | 1700.00 |     400.00 |   3001
+    65271 | WADE     | SALESMAN  |      66928 | 1991-02-22 | 1350.00 |     600.00 |   3001
+    66564 | MADDEN   | SALESMAN  |      66928 | 1991-09-28 | 1350.00 |    1500.00 |   3001
+    68454 | TUCKER   | SALESMAN  |      66928 | 1991-09-08 | 1600.00 |       0.00 |   3001
+    68736 | ADNRES   | CLERK     |      67858 | 1997-05-23 | 1200.00 |            |   2001
+    69000 | JULIUS   | CLERK     |      66928 | 1991-12-03 | 1050.00 |            |   3001
+    69324 | MARKER   | CLERK     |      67832 | 1992-01-23 | 1400.00 |            |   1001
+  14 rows
+                            </code>
+                        </pre>
+                        <h4>The Schema of the <span class="italics bolder">department</span> table is:</h4>
+                        <pre class="code">
+                            <code class="language-sql">
+
+  +--------------+-------------+------+-----+---------+-------+
+  | Field        | Type        | Null | Key | Default | Extra |
+  +--------------+-------------+------+-----+---------+-------+
+  | dep_id       | int         | NO   | PRI | NULL    |       |
+  | dep_name     | varchar(20) | NO   |     | NULL    |       |
+  | dep_location | varchar(15) | NO   |     | NULL    |       |
+  +--------------+-------------+------+-----+---------+-------+
+                            </code>
+                        </pre>
+                        <h4>The contents of the <span class="italics bolder">department</span> table:</h4>
+                        <pre class="code">
+                            <code class="language-sql">
+
+  dep_id |  dep_name  | dep_location
+ --------+------------+--------------
+    1001 | FINANCE    | SYDNEY
+    2001 | AUDIT      | MELBOURNE
+    3001 | MARKETING  | PERTH
+    4001 | PRODUCTION | BRISBANE
+  4 rows
+                            </code>
+                        </pre>
+                        <h4>And Finally <span class="italics bolder">The SQL Query</span> Itself</h4>
+                        <p>I chose to write an SQL query which returns all of the employees who earn an above average salary, sorted by salary.</p>
+                        <p>The <span class="italics bolder">employees</span> database is joined to the <span class="italics bolder">department</span> database using the <span class="italics bolder">department</span> databases primary key which is referenced from the <span class="italics bolder">employees</span> database using a join on a column which makes use of a foreign key constraint (dep_id).</p>
+                        <p>In order to get all employees earning over the average salary I included a subquery in the WHERE clause which compares each employees salary with the returned subquery which calculates the average salary.</p>
+                        <p>The selectors have been formatted to use easy to read labels</p>
+                        <pre class="code">
+                            <code class="language-sql">
+
+  SELECT
+    E.emp_name AS 'Employee Name',
+    E.job_name AS 'Job Title',
+    E.salary AS Salary,
+    D.dep_name AS Department,
+    D.dep_location AS Location
+  FROM employees AS E
+  JOIN department AS D ON D.dep_id = E.dep_id
+  WHERE E.salary > (
+        SELECT AVG(salary)
+        FROM employees
+        )
+  ORDER BY E.salary DESC;
+                            </code>
+                        </pre>
+                        <h4>The Returned Result Set</h4>
+                        <p>The result of the SQL query is a table that contains the employee name, job title, salary, department and location of every employee who earns above the average salary, ordered by salary. </p>
+                        <pre class="code">
+                            <code class="language-sql">
+
+  +---------------+-----------+---------+------------+-----------+
+  | Employee Name | Job Title | Salary  | Department | Location  |
+  +---------------+-----------+---------+------------+-----------+
+  | KAYLING       | PRESIDENT | 6000.00 | FINANCE    | SYDNEY    |
+  | FRANK         | ANALYST   | 3100.00 | AUDIT      | MELBOURNE |
+  | SCARLET       | ANALYST   | 3100.00 | AUDIT      | MELBOURNE |
+  | JONAS         | MANAGER   | 2957.00 | AUDIT      | MELBOURNE |
+  | BLAZE         | MANAGER   | 2750.00 | MARKETING  | PERTH     |
+  | CLARE         | MANAGER   | 2550.00 | FINANCE    | SYDNEY    |
+  +---------------+-----------+---------+------------+-----------+
+  6 Rows
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="accordion-footer">
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <a href="#top">

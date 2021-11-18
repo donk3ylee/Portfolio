@@ -1,0 +1,76 @@
+// <div id="accordion-wrapper">
+//     <div class="accordion">
+//         <div class="accordion-title">
+
+//             <div class="accordion-instructions><div>
+//         </div>
+//         <div class="accordion-body">
+
+//         </div>
+//         <div class="accordion-footer">
+//         </div>
+//     </div>
+// </div>
+
+
+#accordion-wrapper{
+    width: 100%;
+    color: black;
+    @media screen and (max-width: 430px){
+        margin: 0px;
+        padding: 0px;
+    }
+    .accordion{
+        width: 100%;
+        .accordion-title{
+            position: relative;
+            color: white;
+            background-color: black;
+            border: solid 3px white;
+            padding: 40px;
+            &:hover{
+                background-color: #3D3C3A;
+            }
+            .accordion-instructions{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                width: 100%;
+                @include place-awesome-icon('downArrow', $size: 1.5rem, $orientation: 'after');
+            }
+            .contract-instructions{
+                @include place-awesome-icon('upArrow', $size: 1.5rem, $orientation: 'after');
+            }
+        }
+        .accordion-body{
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            
+        }
+        .accordion-footer{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            color: white;
+            background-color: black;
+            border: solid 3px white;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            &::after{
+                content: 'Close the Above Section'
+            }
+            &:hover{
+                background-color: #3D3C3A;
+            }
+        }
+        .active{
+            display: flex;
+        }
+    }
+}
