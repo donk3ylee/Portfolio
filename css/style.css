@@ -42,7 +42,9 @@
   position: relative;
   color: white;
   background-color: black;
+  cursor: pointer;
   border: solid 3px white;
+  border-radius: 30px;
   padding: 40px;
 }
 #accordion-wrapper .accordion .accordion-title:hover {
@@ -81,6 +83,8 @@
   display: none;
   flex-direction: column;
   background-color: white;
+  margin-top: -30px;
+  padding-top: 35px;
 }
 #accordion-wrapper .accordion .accordion-footer {
   display: none;
@@ -88,9 +92,12 @@
   align-items: center;
   width: 100%;
   color: white;
+  cursor: pointer;
   background-color: black;
   border: solid 3px white;
   padding: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -667,6 +674,19 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   height: auto;
   margin: 20px;
 }
+#project .project-card:hover img {
+  box-shadow: 0 0 55px white;
+  filter: brightness(100%);
+  transform: scale(1.2);
+  border: solid 2px #BA0B67;
+  z-index: 1;
+}
+#project .project-card:hover .title {
+  color: white;
+}
+#project .project-card:hover .title .view {
+  color: #C63581;
+}
 #project .project-card img {
   border: solid 2px grey;
   border-radius: 15px;
@@ -693,16 +713,9 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   width: 100%;
   -ms-interpolation-mode: bicubic;
 }
-#project .project-card:hover img {
-  box-shadow: 0 0 55px white;
-  filter: brightness(100%);
-  transform: scale(1.2);
-  border: solid 2px #BA0B67;
-  z-index: 1;
-}
 #project .project-card .title {
   align-self: flex-start;
-  padding: 20px 0 0 20px;
+  padding: 35px 0 0 20px;
   color: #bbb;
   z-index: 1;
   word-wrap: normal;
@@ -731,12 +744,6 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   display: inline-flex;
   justify-content: left;
   align-items: center;
-}
-#project .project-card .title:hover {
-  color: white;
-}
-#project .project-card .title:hover .view {
-  color: #C63581;
 }
 
 #contact .email, #contact textarea, #contact input {
@@ -767,7 +774,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   min-width: 130px;
   color: white;
   background-color: #BA0B67;
-  border: solid 3px #999;
+  border: solid 2px #999;
   border-radius: 30px;
   font-size: 1.1rem;
   transition: transform 0.2s ease-in, border 0.2s ease-in;

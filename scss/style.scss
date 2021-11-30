@@ -417,6 +417,21 @@ footer{
             height: auto;
             margin: 20px; //
         }
+        &:hover{
+            img{
+                box-shadow: 0 0 55px white;
+                filter: brightness(100%);
+                transform: scale(1.2);
+                border: solid 2px $matrix-purple-med-l;
+                z-index:1;
+            }
+            .title{
+                color: white;
+                .view{
+                    color: $matrix-purple-light;
+                }
+            }
+        }
         img{
             border: solid 2px grey;
             border-radius: $project-card-border-radius;
@@ -435,16 +450,9 @@ footer{
             transform: scale(1);
             transition: box-shadow 1s ease, transform 0.4s ease, filter 0.4s ease;
         }
-        &:hover img{
-            box-shadow: 0 0 55px white;
-            filter: brightness(100%);
-            transform: scale(1.2);
-            border: solid 2px $matrix-purple-med-l;
-            z-index:1;
-        }
         .title{
             align-self: flex-start;
-            padding: 20px 0 0 20px;
+            padding: 35px 0 0 20px;
             color: #bbb;
             z-index: 1;
             word-wrap: normal;
@@ -467,23 +475,8 @@ footer{
                 justify-content: left;
                 align-items: center;
             }
-            &:hover{
-                color: white;
-                .view{
-                    color: $matrix-purple-light;
-                }
-            }
+            
         }
-        // .arrow{
-        //     font-size: 35px;
-        //     opacity: 0;
-        //     transform: translateX(-100%);
-        //     transition: opacity 0.4s ease-in, transform 0.4s ease-in;
-        // }
-        // &:hover .arrow{
-        //     opacity: 1;
-        //     transform: translateX(100%) rotateX(360deg);
-        // }
     }
 }
 
@@ -514,7 +507,7 @@ footer{
     min-width: 130px;
     color: white;
     background-color: $matrix-purple-med-l;
-    border: solid 3px #999;
+    border: solid 2px #999;
     border-radius: 30px;
     font-size: 1.1rem;
     transition: transform .2s ease-in, border .2s ease-in;

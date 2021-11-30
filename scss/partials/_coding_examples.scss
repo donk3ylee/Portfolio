@@ -26,7 +26,9 @@
             position: relative;
             color: white;
             background-color: black;
+            cursor: pointer;
             border: solid 3px white;
+            border-radius: 30px;
             padding: 40px;
             &:hover{
                 background-color: #3D3C3A;
@@ -49,7 +51,8 @@
             display: none;
             flex-direction: column;
             background-color: white;
-            
+            margin-top: -30px;
+            padding-top: 35px;
         }
         .accordion-footer{
             display: none;
@@ -57,9 +60,12 @@
             align-items: center;
             width: 100%;
             color: white;
+            cursor: pointer;
             background-color: black;
             border: solid 3px white;
             padding: 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
             font-size: 1.1rem;
             font-weight: 400;
             &::after{
