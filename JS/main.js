@@ -41,6 +41,7 @@ for (i = 0; i < accordionItem.length; i++) {
     const footer = accordionFooter[i]
     const instruct = accordionInstructions[i]
     title.addEventListener('click',() => {
+        // body.classList.toggle('accordion-open')
         body.classList.toggle('active')
         footer.classList.toggle('active')
         instruct.classList.toggle('contract-instructions')

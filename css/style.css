@@ -43,8 +43,6 @@
   color: white;
   background-color: black;
   cursor: pointer;
-  border: solid 3px white;
-  border-radius: 30px;
   padding: 40px;
 }
 #accordion-wrapper .accordion .accordion-title:hover {
@@ -83,7 +81,6 @@
   display: none;
   flex-direction: column;
   background-color: white;
-  margin-top: -30px;
   padding-top: 35px;
 }
 #accordion-wrapper .accordion .accordion-footer {
@@ -94,10 +91,7 @@
   color: white;
   cursor: pointer;
   background-color: black;
-  border: solid 3px white;
   padding: 20px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -109,6 +103,35 @@
 }
 #accordion-wrapper .accordion .active {
   display: flex;
+}
+
+.accordion:not(:first-of-type, :last-of-type) {
+  border-left: solid 3px white;
+  border-right: solid 3px white;
+}
+
+.accordion:first-of-type {
+  border: solid 3px white;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.accordion:first-of-type .accordion-title {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.accordion:last-of-type {
+  border: solid 3px white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.accordion:last-of-type .accordion-title {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.accordion:last-of-type .accordion-footer {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 @font-face {
@@ -473,13 +496,16 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   font-size: 1.2rem;
   position: relative;
 }
+#menu .menu a:hover {
+  color: white;
+}
 #menu .menu a:after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 4px solid #7A0040;
+  border-bottom: 2px solid #C63581;
   transition: 0.4s ease-in-out;
 }
 #menu .menu a:hover::after, #menu .menu a:focus::after, #menu .menu a:active::after {

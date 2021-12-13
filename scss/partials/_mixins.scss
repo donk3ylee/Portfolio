@@ -78,6 +78,7 @@
     }
 }
 
+
 @mixin buildTooltip($width: 120px, $margin: 10px, $bg-color: white, $color: black, $border-radius: 6px){
     position: absolute;
     z-index: 1;

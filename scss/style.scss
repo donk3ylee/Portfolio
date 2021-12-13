@@ -254,13 +254,16 @@ footer{
             margin: 20px 0;
             font-size: 1.2rem;
             position: relative;
+            &:hover{
+                color: white;
+            }
             &:after{
                 content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 0%;
-                border-bottom: 4px solid $matrix-purple-med-d;
+                border-bottom: 2px solid $matrix-purple-light;
                 transition: 0.4s ease-in-out;
             }
             &:hover::after,
