@@ -38,7 +38,7 @@ session_destroy();
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
     <script src="JS/typeEffect/core.js" defer></script>
     <script src="JS/typeEffect/myType.js" defer></script>
-    <script src="JS/formValidation.js" defer></script>
+    <!-- <script src="JS/formValidation.js" defer></script> -->
     <script src="JS/main.js" defer></script>
 
 </head>
