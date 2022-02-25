@@ -536,6 +536,32 @@ footer{
     border-radius: 30px;
     .contact-copy{
         width:100%;
+        // .errors{
+        //     display: block;
+        //     background-color: bisque;
+        //     border: 3px solid red;
+        //     color: red;
+        //     width: 100%;
+        //     text-align: center;
+        //     padding: 20px;
+        //     font-size: 1rem;
+        //     @include MQ('sm','and-smaller'){
+        //         font-size: 0.8rem;
+        //     }
+        // }
+        // .success{
+        //     display: block;
+        //     background-color: bisque;
+        //     border: 3px solid green;
+        //     color: green;
+        //     width: 100%;
+        //     text-align: center;
+        //     padding: 20px;
+        //     font-size: 1rem;
+        //     @include MQ('sm','and-smaller'){
+        //         font-size: 0.8rem;
+        //     }
+        // }
         #formErrorMessages{
             display: none;
             text-align: center;
@@ -552,6 +578,18 @@ footer{
                 padding:3px 0px 0px;
                 }
             }
+        }
+        .errors{
+            @extend #formErrorMessages;
+            display: block;
+            color: red;
+            list-style: none;
+        }
+        .success{
+            @extend #formErrorMessages;
+            display: block;
+            color: green;
+            list-style: none;
         }
     }
     input{

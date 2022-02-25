@@ -829,7 +829,7 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #contact .contact-copy {
   width: 100%;
 }
-#contact .contact-copy #formErrorMessages {
+#contact .contact-copy #formErrorMessages, #contact .contact-copy .success, #contact .contact-copy .errors {
   display: none;
   text-align: center;
   color: white;
@@ -840,9 +840,19 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
   border-radius: 20px;
   padding: 25px;
 }
-#contact .contact-copy #formErrorMessages ul li {
+#contact .contact-copy #formErrorMessages ul li, #contact .contact-copy .success ul li, #contact .contact-copy .errors ul li {
   list-style: none;
   padding: 3px 0px 0px;
+}
+#contact .contact-copy .errors {
+  display: block;
+  color: red;
+  list-style: none;
+}
+#contact .contact-copy .success {
+  display: block;
+  color: green;
+  list-style: none;
 }
 #contact textarea {
   height: calc(1.5rem * 6);

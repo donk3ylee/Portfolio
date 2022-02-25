@@ -1,3 +1,29 @@
+<?php 
+session_start();
+
+function display_errors(){
+    if(isset($_SESSION['errors'])){
+        echo '<ul class="errors" id="error_target">';
+        foreach($_SESSION['errors'] as $error){
+            echo '<li>'. $error .'</li>';
+        }
+        echo'</ul>';
+    }
+}
+
+function paste_value($name){
+    if(isset($_SESSION['form_data'])){
+        return $_SESSION['form_data'][$name];
+    }
+}
+
+function display_success(){
+    if(isset($_SESSION['success'])){
+        echo '<ul class="success" id="success_target"><li>'. $_SESSION['success'] .'</li></ul>';
+    }
+}
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,24 +33,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/b4e3e1b974.js" crossorigin="anonymous"></script>
     <script src="JS/typeEffect/core.js" defer></script>
     <script src="JS/typeEffect/myType.js" defer></script>
-    <script src="JS/formValidation.js" defer></script>
+    <!-- <script src="JS/formValidation.js" defer></script> -->
     <script src="JS/main.js" defer></script>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <div id="menu">
-    <a class="logo" href="/"><img src="img/LW-logo.jpg" alt="Lee Whiting Web Developer"></a>
+    <a class="logo" href="index.html"><img src="img/LW-logo.jpg" alt="Lee Whiting Web Developer"></a>
     <nav>
         <div class="menu">
             <a href="about_me.html">About Me</a>
-            <a href="/#project">My Portfolio</a>
+            <a href="#project">My Portfolio</a>
             <a href="coding_examples.html">Coding Examples</a>
             <a href="scs_scheme.html">SCS Scheme</a>
-            <a href="/#contact">Contact Me</a>
+            <a href="#contact">Contact Me</a>
         </div>
         <a href="https://github.com/donk3ylee" class="center" target="_blank">
             <div class="tooltip-container">
@@ -36,7 +63,7 @@
 </div>
 <div id="slider-container">
     <div id="x"></div>
-    <a href="/">
+    <a href="index.html">
         <div class="slider-home"></div>
         Home
     </a>
@@ -44,7 +71,7 @@
         <div class="slider-about"></div>
         About Me
     </a>
-    <a href="/#project">
+    <a href="index.html#project">
         <div class="slider-portfolio"></div>
         My Portfolio
     </a>
@@ -56,7 +83,7 @@
         <div class="slider-scheme"></div>
         SCS Scheme
     </a>
-    <a href="/#contact">
+    <a href="index.html#contact">
         <div class="slider-contact"></div>
         Contact Me
     </a>
@@ -163,23 +190,25 @@
             <h2>Feel Free to Get in Touch</h2>
             <p>Please feel free to contact me using the form regarding my web development skills and your business needs.</p>
             <div id="formErrorMessages"></div>
-            <form id="contact-form" method="POST" action="#">
+            <?= display_errors(); ?>
+            <?= display_success(); ?>
+            <form id="contact-form" method="POST" action="./src/processForm.php">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <input type="text" placeholder="First Name*" name="firstName">
+                            <input type="text" placeholder="First Name*" name="firstName" value="<?= paste_value('firstName'); ?>">
                         </div>
                         <div class="col-12 col-sm-6">
-                            <input type="text" placeholder="Last Name*" name="lastName">
+                            <input type="text" placeholder="Last Name*" name="lastName" value="<?= paste_value('lastName'); ?>">
                         </div>
                         <div class="col-12">
-                            <input type="text" placeholder="Your Email Address*" name="emailAddress">
+                            <input type="text" placeholder="Your Email Address*" name="emailAddress" value="<?= paste_value('emailAddress'); ?>">
                         </div>
                         <div class="col-12">
-                            <input type="text" placeholder="Subject of Your Enquiry*" name="subject">
+                            <input type="text" placeholder="Subject of Your Enquiry*" name="subject" value="<?= paste_value('subject'); ?>">
                         </div>
                         <div class="col-12">
-                            <textarea placeholder="Message*" name="message"></textarea>
+                            <textarea placeholder="Message*" name="message"><?= paste_value('message'); ?></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit">Submit</button>
