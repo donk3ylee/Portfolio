@@ -14,7 +14,7 @@ class DB
     function __construct()
     {
         $this->servername = $_ENV['SERVERNAME'];
-        $this->port = $_ENV['port'];
+        $this->port = $_ENV['PORT'];
         $this->username = $_ENV['USERNAME'];
         $this->password = $_ENV['PASSWORD'];
         $this->dbname = $_ENV['DATABASE'];

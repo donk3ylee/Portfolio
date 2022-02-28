@@ -44,7 +44,7 @@ session_destroy();
 </head>
 <body>
 <div id="menu">
-    <a class="logo" href="index.html"><img src="img/LW-logo.jpg" alt="Lee Whiting Web Developer"></a>
+    <a class="logo" href="index.php"><img src="img/LW-logo.jpg" alt="Lee Whiting Web Developer"></a>
     <nav>
         <div class="menu">
             <a href="about_me.html">About Me</a>
@@ -63,7 +63,7 @@ session_destroy();
 </div>
 <div id="slider-container">
     <div id="x"></div>
-    <a href="index.html">
+    <a href="index.php">
         <div class="slider-home"></div>
         Home
     </a>
@@ -71,7 +71,7 @@ session_destroy();
         <div class="slider-about"></div>
         About Me
     </a>
-    <a href="index.html#project">
+    <a href="index.php#project">
         <div class="slider-portfolio"></div>
         My Portfolio
     </a>
@@ -83,7 +83,7 @@ session_destroy();
         <div class="slider-scheme"></div>
         SCS Scheme
     </a>
-    <a href="index.html#contact">
+    <a href="index.php#contact">
         <div class="slider-contact"></div>
         Contact Me
     </a>
