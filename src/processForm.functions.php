@@ -20,5 +20,4 @@ function getRealName($name){
     default:
         return null;
     }
-
 }

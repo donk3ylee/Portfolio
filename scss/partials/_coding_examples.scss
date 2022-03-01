@@ -109,3 +109,63 @@
 //     }
 //     animation: accordion-open 2s;
 // }
+
+#coding-examples{
+    max-width:1000px;
+    width: 100%;
+    p{
+        margin: 25px 0;
+    }
+    h4{
+        padding-top: 20px;
+    }
+    .screenshot{
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .tech-breakdown{
+        display: flex;
+        align-items: center;
+        // flex-direction: column;
+        margin: 0 0 30px;
+        .breakdown-item{
+            display: table-cell;
+            padding: 15px;
+            .value{
+                font-size: 1.5rem;
+            }
+            &.markup{
+                color: $html5-orange;
+                @include place-awesome-icon('html', 3rem, 'after'){
+                }
+            }
+            &.sass{
+                color: $sass-pink;
+                @include place-awesome-icon('sass', 3rem, 'after'){
+                }
+            }
+            &.css{
+                color: $css-blue;
+                @include place-awesome-icon('css', 3rem, 'after'){
+                }
+            }
+            &.javascript{
+                color: $javascript-yellow;
+                @include place-awesome-icon('javascript', 3rem, 'after'){
+                }
+            }
+            &.sql{
+                color: $sql-teal;
+                @include place-awesome-icon('cubes', 3rem, 'after'){
+                }
+            }
+            &.php{
+                color: $php-blue;
+                @include place-awesome-icon('php', 3rem, 'after'){
+                }
+            }
+        }
+    }
+}

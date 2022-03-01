@@ -134,6 +134,107 @@
   border-bottom-right-radius: 30px;
 }
 
+#coding-examples {
+  max-width: 1000px;
+  width: 100%;
+}
+#coding-examples p {
+  margin: 25px 0;
+}
+#coding-examples h4 {
+  padding-top: 20px;
+}
+#coding-examples .screenshot {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin-bottom: 20px;
+}
+#coding-examples .tech-breakdown {
+  display: flex;
+  align-items: center;
+  margin: 0 0 30px;
+}
+#coding-examples .tech-breakdown .breakdown-item {
+  display: table-cell;
+  padding: 15px;
+}
+#coding-examples .tech-breakdown .breakdown-item .value {
+  font-size: 1.5rem;
+}
+#coding-examples .tech-breakdown .breakdown-item.markup {
+  color: #E34C26;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.markup::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#coding-examples .tech-breakdown .breakdown-item.sass {
+  color: #CD6799;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.sass::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#coding-examples .tech-breakdown .breakdown-item.css {
+  color: #1B73BA;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.css::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#coding-examples .tech-breakdown .breakdown-item.javascript {
+  color: #F0D84F;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.javascript::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#coding-examples .tech-breakdown .breakdown-item.sql {
+  color: #15AABF;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.sql::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+#coding-examples .tech-breakdown .breakdown-item.php {
+  color: #6181B6;
+  font-size: 3rem;
+  line-height: normal;
+  overflow: visible;
+}
+#coding-examples .tech-breakdown .breakdown-item.php::after {
+  display: flex;
+  justify-content: center;
+  font-family: FontAwesome !important;
+  content: "";
+}
+
 @font-face {
   font-family: bitwise;
   src: url(../fonts/bitwise.regular.ttf);
@@ -876,88 +977,6 @@ footer .scroll-up:hover, footer .scroll-up:focus, footer .scroll-up:active {
 #scs-scheme {
   max-width: 1000px;
   width: 100%;
-}
-
-#coding-examples {
-  max-width: 1000px;
-  width: 100%;
-}
-#coding-examples p {
-  margin: 25px 0;
-}
-#coding-examples h4 {
-  padding-top: 20px;
-}
-#coding-examples .screenshot {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  margin-bottom: 20px;
-}
-#coding-examples .tech-breakdown {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: 0 0 30px;
-}
-#coding-examples .tech-breakdown .breakdown-item {
-  display: flex;
-  align-items: center;
-}
-#coding-examples .tech-breakdown .breakdown-item .value {
-  font-size: 1.5rem;
-}
-#coding-examples .tech-breakdown .breakdown-item.markup {
-  color: #E34C26;
-  font-size: 3rem;
-  line-height: normal;
-  overflow: visible;
-}
-#coding-examples .tech-breakdown .breakdown-item.markup::after {
-  display: flex;
-  justify-content: center;
-  font-family: FontAwesome !important;
-  content: "";
-  margin-left: 2rem;
-}
-#coding-examples .tech-breakdown .breakdown-item.sass {
-  color: #CD6799;
-  font-size: 3rem;
-  line-height: normal;
-  overflow: visible;
-}
-#coding-examples .tech-breakdown .breakdown-item.sass::after {
-  display: flex;
-  justify-content: center;
-  font-family: FontAwesome !important;
-  content: "";
-  margin-left: 2rem;
-}
-#coding-examples .tech-breakdown .breakdown-item.javascript {
-  color: #F0D84F;
-  font-size: 3rem;
-  line-height: normal;
-  overflow: visible;
-}
-#coding-examples .tech-breakdown .breakdown-item.javascript::after {
-  display: flex;
-  justify-content: center;
-  font-family: FontAwesome !important;
-  content: "";
-  margin-left: 2rem;
-}
-#coding-examples .tech-breakdown .breakdown-item.sql {
-  color: #15AABF;
-  font-size: 3rem;
-  line-height: normal;
-  overflow: visible;
-}
-#coding-examples .tech-breakdown .breakdown-item.sql::after {
-  display: flex;
-  justify-content: center;
-  font-family: FontAwesome !important;
-  content: "";
-  margin-left: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

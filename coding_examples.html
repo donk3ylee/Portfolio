@@ -75,8 +75,8 @@
         <main>
             <div id="accordion-wrapper">
                 <div class="accordion">
-                    <div class="accordion-title"
-                        ><h2>Netmatters Reflection</h2>
+                    <div class="accordion-title">
+                        <h2>Netmatters Reflection</h2>
                         <p>This was a learning task to build a detailed copy of the Netmatters homepage. Firstly in html/css/sass and then adding javascript functionality and back-end processing. The live example can be found <a href="http://netmatters.lee-whiting.netmatters-scs.co.uk" target="_blank">here.</a> An example of the code used can be found below.</p>
                         <div class="tech-breakdown">
                             <div class="breakdown-item sass" title="This Project Required the use of 54.9% SASS (Sassy CSS)">
@@ -226,19 +226,171 @@ $menu_color_map:(
                     <div class="accordion-footer">
                     </div>
                 </div>
-                <!-- example of a middle section  -->
+
                 <div class="accordion">
+                    <div class="accordion-title">
+                        <h2>Example of Back-End Procedural PHP code</h2>
+                        <p>This is the procedural PHP code which processes, validates and sanitizes the inputs of the contact form on this site and inserts them into a database. An example of the code used can be found below.</p>
+                        <div class="tech-breakdown">
+                            <div class="breakdown-item sass" title="This Project Required the use of 33.6% SASS (Sassy CSS)">
+                                <div class="value">33.6&#37;</div>
+                            </div>
+                            <div class="breakdown-item css" title="This Project Required the use of 2.4% CSS 3">
+                                <div class="value">2.4&#37;</div>
+                            </div>
+                            <div class="breakdown-item markup" title="This Project Required the use of 38.2% HTML 5 Markup Language">
+                                <div class="value">38.2&#37;</div>
+                            </div>
+                            <div class="breakdown-item javascript" title="This Project Required the use of 6.3% of JavaScript">
+                                <div class="value">6.3&#37;</div>
+                            </div>
+                            <div class="breakdown-item php" title="This Project Required the use of 19.5% PHP code">
+                                <div class="value">19.5&#37;</div>
+                            </div>
+                        </div>
+                        <div class="accordion-instructions"></div>
+                    </div>
+                    <div class="accordion-body">
+                        <p>Below is an example of a PHP script which processes a form validates the data being entered, sanitizes the data and inserts it into a database. </p>
+                        <pre class="code">
+                            <code class="language-php">
+session_start();
+include_once("./bootstrap.php");
+include_once('./processForm.functions.php');
+
+// START send form data back to repopulate the contact form
+$form_data = array();
+foreach($_POST as $name => $value){   
+    $_SESSION['form_data'][$name] = $value;
+}
+// END send form data back to repopulate the contact form
+
+// START check for empty status for each required field
+$errors = array();
+foreach($_POST as $name => $value){
+    if(empty($value)){
+        if($name !="companyName"){
+            array_push($errors, getRealName($name) ." is a required field and needs to be filled out.");
+        }
+    }
+}
+if (count($errors) != 0){
+    $_SESSION['errors'] = $errors;
+    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../index.php#error_target');
+    exit;
+}
+// END check for empty status for each required field
+
+// START validate the email and telephone inputs
+$validation_errors = array();
+$results = array();
+$results['emailAddress'] = filter_var($_POST['emailAddress'], FILTER_VALIDATE_EMAIL);
+
+foreach($results as $name => $value){
+    if($value == FALSE){
+        array_push($validation_errors, "<p>". getRealName($name) ." is not the correct format please check.</p>");
+    }
+}
+
+if (count($validation_errors) != 0){
+    $_SESSION['errors'] = $validation_errors;
+    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../index.php#error_target');
+    exit;
+}
+// END validate the email and telephone inputs
+
+// START Sanitize post inputs and add them to the database
+$filter = array(
+    "firstName" => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    "lastName" => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    "emailAddress" => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    "subject" => FILTER_SANITIZE_FULL_SPECIAL_CHARS,
+    "message" => FILTER_SANITIZE_FULL_SPECIAL_CHARS
+);
+
+$input = filter_input_array(INPUT_POST, $filter);
+
+try{
+
+    $db = new DB;
+    $conn = $db->get_connection();
+    $query = "INSERT INTO contacts (fName, lName, email, subject, message) 
+                VALUES(:fname, :lName, :email, :subject, :message)";
+    $result = $conn->prepare($query);
+    $result->bindParam(':fname', $input['firstName']);
+    $result->bindParam(':lName', $input['lastName']);
+    $result->bindParam(':email', $input['emailAddress']);
+    $result->bindParam(':subject', $input['subject']);
+    $result->bindParam(':message', $input['message']);
+    if($result->execute()){
+        $_SESSION['success'] = "Thank you for leaving a message. I will get back to you at my earliest convenience";
+        unset($_SESSION['form_data']);
+        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../index.php#success_target');
+        exit;
+    } else {
+        $_SESSION['error'] = "Something went wrong. I'm sorry but you did not leave a message this time please try again.";
+        header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../index.php#error-target');
+        exit;
+    }
+
+} catch (PDOException $e) {
+
+    throw $e;
+
+}
+// END Sanitize post inputs and add them to the database
+                            </code>
+                        </pre>
+                        <p>The function/s contained in processForm.functions.php that relate to this code are:</p>
+                        <pre class="code">
+                            <code class="language-php">
+function getRealName($name){
+    switch ($name){
+    case 'firstName':
+        return "The First Name";
+
+    case 'lastName':
+        return "The Last Name";
+    
+    case 'emailAddress':
+        return "Your Email Address";
+    
+    case 'subject':
+        return "The Subject Line";
+
+    case 'message':
+        return "The Message";
+    
+    default:
+        return null;
+    }
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="accordion-footer">
+                    </div>
+                </div>
+
+                <!-- example of another section  -->
+                <!-- <div class="accordion">
                     <div class="accordion-title">
                         Testing testing testing 1 2 3 the middle section
                         <div class="accordion-instructions"></div>
                     </div>
                     <div class="accordion-body">
                         bla bla bla middle section code etc.
+                        <pre class="code">
+                            <code class="language-html">
+code
+                            </code>
+                        </pre>
                     </div>
                     <div class="accordion-footer">
                     </div>
-                </div>
-                <!-- end example middle section -->
+                </div> -->
+                <!-- end example section -->
+
                 <div class="accordion">
                     <div class="accordion-title">
                         <h2>Example of an SQL query containing a table join, subquery and ordering filter</h2>
