@@ -153,6 +153,7 @@
 #coding-examples .tech-breakdown {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   margin: 0 0 30px;
 }
 #coding-examples .tech-breakdown .breakdown-item {

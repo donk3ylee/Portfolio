@@ -128,6 +128,7 @@
     .tech-breakdown{
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         // flex-direction: column;
         margin: 0 0 30px;
         .breakdown-item{
