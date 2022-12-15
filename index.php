@@ -52,6 +52,7 @@ session_destroy();
             <a href="coding_examples.html">Coding Examples</a>
             <a href="scs_scheme.html">SCS Scheme</a>
             <a href="#contact">Contact Me</a>
+            <a href="#contact">boo</a>
         </div>
         <a href="https://github.com/donk3ylee" class="center" target="_blank">
             <div class="tooltip-container">
