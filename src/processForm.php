@@ -80,8 +80,10 @@ try{
     }
 
 } catch (PDOException $e) {
-    throw $e;
-    echo $e;
-    die;
+    // throw $e;
+    // TODO email developer with $e
+    $_SESSION['error'] = "Something went wrong with the database connection. We are looking into this, however I'm sorry but you did not leave a message this time please try again.";
+    header('Location: http://'. $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"] .'/../../index.php#error-target');
+    exit;
 }
 // END Sanitize post inputs and add them to the database
