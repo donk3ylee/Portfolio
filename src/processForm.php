@@ -80,6 +80,6 @@ try{
     }
 
 } catch (PDOException $e) {
-    throw $e;
+    echo $e;
 }
 // END Sanitize post inputs and add them to the database
