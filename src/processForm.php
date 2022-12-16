@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include_once(__DIR__ ."/bootstrap.php");
-include_once(__DIR__ .'/processForm.functions.php');
+include_once($_SERVER['DOCUMENT_ROOT'] ."/src/bootstrap.php");
+include_once($_SERVER['DOCUMENT_ROOT'] .'/src/processForm.functions.php');
 
 // START send form data back to repopulate the contact form
 $form_data = array();
