@@ -136,7 +136,7 @@ session_destroy();
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-6 col-xl-4">
+                <!-- <div class="col-12 col-md-6 col-xl-4">
                     <a href="http://bakers-dozen.phpdonk3y.com" target="_blank">
                         <div class="project-card">
                             <img src="img/projects/bakers-dozen.png" alt="Bakers Dozen - Showcase project which was a collaboration project to build a complete website from a picture / wireframe brief.">
@@ -148,7 +148,7 @@ session_destroy();
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> -->
                 <!-- <div class="col-12 col-md-6 col-xl-4">
                     <a href="#">
                         <div class="project-card">
